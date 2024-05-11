@@ -1,0 +1,9 @@
+
+
+
+test_class_01_marked_last|tests/tests_ex01_make_report/test_class.py::TestApp::test_class_01_marked_last|-PASSED-|0.00010159984230995178|last
+test_class_02_marked_first|tests/tests_ex01_make_report/test_class.py::TestApp::test_class_02_marked_first|-PASSED-|0.00017220014706254005|first
+test_class_03_not_first_or_last|tests/tests_ex01_make_report/test_class.py::TestApp::test_class_03_not_first_or_last|-PASSED-|8.520018309354782e-05|
+test_class_MAKE_REPORT|tests/tests_ex01_make_report/test_make_report.py::TestApp::test_class_MAKE_REPORT|-PASSED-|8.929986506700516e-05|inner-sanity-db2-db-outer
+test_class_division|tests/tests_ex01_make_report/test_make_report.py::TestApp::test_class_division|-PASSED-|0.00011580018326640129|inner-db2-outer
+test_fn_example3_xfail|tests/tests_ex01_make_report/test_make_report.py::TestApp::test_fn_example3_xfail|^!!!FAILED!!!^|0.0005572997033596039|inner-xfail-setup
