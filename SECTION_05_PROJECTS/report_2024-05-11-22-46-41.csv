@@ -1,2 +1,0 @@
-test_fn_example1_pass|tests/tests_04_filter_tests/test_functions.py::test_fn_example1_pass|-PASSED-|0.0007093999884091318|
-test_fn_example3_xfail|tests/tests_04_filter_tests/test_functions.py::test_fn_example3_xfail|^!!!FAILED!!!^|0.000591500021982938|inner-xfail-setup
