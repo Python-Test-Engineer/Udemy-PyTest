@@ -1,1 +1,0 @@
-Test that this TERM <test_word> is in file
