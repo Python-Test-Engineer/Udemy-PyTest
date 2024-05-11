@@ -1,0 +1,11 @@
+
+
+
+test_class_division|tests/tests_ex03_sort_tests/tests_sort_by_testname/test_class.py::TestApp::test_class_division|-PASSED-|0.000206800177693367|inner-db2-outer
+
+THIS ONE:
+test_class_multiplication|tests/tests_ex03_sort_tests/tests_sort_by_testname/test_class.py::TestApp::test_class_multiplication|-PASSED-|9.980006143450737e-05|inner-sanity-db2-db-outer
+
+test_fn_example1_pass|tests/tests_ex03_sort_tests/tests_sort_by_testname/test_functions.py::test_fn_example1_pass|-PASSED-|0.0005423999391496181|sanity-outer
+test_fn_example2_pass|tests/tests_ex03_sort_tests/tests_sort_by_testname/test_functions.py::test_fn_example2_pass|-PASSED-|0.0006110998801887035|inner-sanity
+test_fn_example3_xfail|tests/tests_ex03_sort_tests/tests_sort_by_testname/test_functions.py::test_fn_example3_xfail|^!!!FAILED!!!^|0.0006248001009225845|inner-xfail-setup
