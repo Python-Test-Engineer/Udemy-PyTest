@@ -31,7 +31,7 @@ def test_sort(pytester, examples):
 
 
 def test_sort_desc(pytester, examples):
-    result = pytester.runpytest("-vs", "--desc")
+    result = pytester.runpytest("-v", "--desc")
     result.stdout.fnmatch_lines(
         [
             "*===> DESC:*",
