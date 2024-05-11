@@ -14,6 +14,7 @@ def test_fn_example1_pass():
 def test_fn_example2_pass():
     """Docstring 2"""
     print("\n\ntest_example2_pass\n")
+    log
     assert True
 
 
