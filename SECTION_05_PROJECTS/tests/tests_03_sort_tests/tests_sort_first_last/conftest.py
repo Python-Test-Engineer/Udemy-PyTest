@@ -34,7 +34,7 @@ def pytest_collection_modifyitems(items, config):
         else:
             remaining_tests.append(test)
 
-    items[:] = first_tests + last_tests + remaining_tests
+    items[:] = first_tests + remaining_tests + last_tests
 
 
 # @pytest.hookimpl(hookwrapper=True)

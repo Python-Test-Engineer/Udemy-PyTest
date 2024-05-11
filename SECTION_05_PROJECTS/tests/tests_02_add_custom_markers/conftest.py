@@ -2,7 +2,7 @@
 In this example we have commented out pytest_runtest_makereport and use the root level configtest.py implementation of from django.conf import settings"
 """
 
-# import pytest
+import pytest
 
 
 # from _pytest.nodes import Item
@@ -10,6 +10,7 @@ In this example we have commented out pytest_runtest_makereport and use the root
 from pyboxen import boxen
 
 print("\n\n")
+
 
 # ensure ; addopts = --strict-markers not used or add via config hook otherwise following error cocurs:
 # INTERNALERROR> Failed: 'simple' not found in `markers` configuration option

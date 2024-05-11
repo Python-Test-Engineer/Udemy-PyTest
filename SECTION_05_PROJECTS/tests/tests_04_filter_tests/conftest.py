@@ -1,12 +1,3 @@
-import pytest
-from datetime import datetime
-from _pytest.nodes import Item
-from _pytest.runner import CallInfo
-
-
-report_date = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-FILENAME = f"report_skip_tests_{report_date}.csv"
-
 print("\n\n")
 
 
@@ -16,8 +7,6 @@ def pytest_collection_modifyitems(items, config):
     selected = []
     deselected = []
     for item in items:
-        print(f"\ntest: {item.nodeid}")
-        # Either add to deselected or selected lists
 
         list_markers = [
             str(getattr(item.own_markers[j], "name"))
@@ -40,5 +29,3 @@ def pytest_collection_modifyitems(items, config):
 
     # Update the selected tests
     items[:] = selected
-    for item in items:
-        print(f"\nSELECTED: {item.nodeid}")
