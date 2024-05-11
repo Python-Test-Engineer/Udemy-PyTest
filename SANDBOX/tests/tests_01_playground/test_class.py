@@ -13,8 +13,6 @@ class TestApp:
         assert True
 
     @pytest.mark.outer
-    @pytest.mark.db2
-    @pytest.mark.db2
     @pytest.mark.inner
     def test_class_division(self):
 
