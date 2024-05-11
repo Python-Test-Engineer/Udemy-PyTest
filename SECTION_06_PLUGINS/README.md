@@ -7,11 +7,11 @@ in [project] section, change this to pytest-sort notpytest_sort as PyPi prefers 
 [project]
 name = "pytest-sort" 
 
-Copy conftest.py local to pytest_sort.py as this is the plugin with rest of template.
+Copy conftest.py local to pytest_sort.py as this is the plugin with rest of template. 
 
-We use `flit build --format=wheel` to build a whl file which we then need to install so that our plugin is active:
+Remember, a plugin is just the hook code. `conftest.py` is a plugin but a local one. 
 
-`pip install .\dist\pytest_sort-0.0.1-py3-none-any.whl` (--force if already one there)
+We need to test that the plugin does sort and we use the src to test this.
 
 To test src code before and after installation of our plugin:
 
@@ -35,42 +35,46 @@ src/test_sort.py::test_r PASSED
 src/test_sort.py::test_s PASSED
 src/test_sort.py::test_x PASSED
 src/test_sort.py::test_y PASSED
+src/test_sort.py::test_zPASSED
 ```
-
-We then need to `python -m pytest -vs .\tests\test_plugin.py`. We don't want to run any other test files.
-
-We will see that the tests are sorted alphabetically and KEYWORDS are displayed.
-
-This is manual test so we need to do an assert on PASSED=6 as well as content displayed:
+and with the --desc flag get the reverse:
 
 ```
-    result = pytester.runpytest("-v")
-    # adjust if number of tests are different
-    result.assert_outcomes(passed=6) 
-    # search the console output for expected prhases
-    # note we use * wild cards * for text fragments
-    result.stdout.fnmatch_lines(
-        [
-            "*test_sort.py::test_z PASSED*",
-        ]
-    )
-    result.stdout.fnmatch_lines(
-        [
-            "*test_sort.py::test_s PASSED*",
-        ]
-    )
-    result.stdout.fnmatch_lines(
-        [
-            "*test_sort.py::test_a PASSED*",
-        ]
-    )
-    result.stdout.fnmatch_lines(
-        [
-            "*==== 6 passed in*", # this is in the summary line
-        ]
-    )
- 
- 
+src/test_sort.py::test_z PASSED
+src/test_sort.py::test_y PASSED
+src/test_sort.py::test_x PASSED
+src/test_sort.py::test_s PASSED
+src/test_sort.py::test_r PASSED
+src/test_sort.py::test_a PASSED
 ```
 
-as we see in test_result.png, we have 3 passed which is verified with `result.assert_outcomes(passed=3)` and we can also search the -v output for items using the wildcard `result.stdout.fnmatch_lines()` with `"*==== 3 passed in*"` for example.
+as well as 
+```
+===> DESC: True
+```
+
+We use `flit build --format=wheel` to build a whl file which we then need to install so that our plugin is active:
+
+`pip install .\dist\pytest_sort-0.0.1-py3-none-any.whl` (--force if already one there)
+
+We then run two tests from test_plugin.py to test the plugin itself not the src code. The end user will just run their test files with --desc or not. The plugin will then sort one way or the other.
+
+It is the same as we saw in the project.
+
+```
+result = pytester.runpytest("-v")
+```
+and we test that the output is ascending
+
+```
+result = pytester.runpytest("-v","--desc")
+```
+and we see the reverse order and the presence of `===> DESC: `. We don't need to check for True as the presence of this indicates the flag was set.
+
+We also check 6 tests passed.
+
+If you change the plugin_sort.py or any other plugin file, uninstall the plugin, delete the dist folder and then rebuild and install.
+
+To uninstall the plugin:
+
+`pip uninstall .\dist\pytest_sort-0.0.1-py3-none-any.whl`
