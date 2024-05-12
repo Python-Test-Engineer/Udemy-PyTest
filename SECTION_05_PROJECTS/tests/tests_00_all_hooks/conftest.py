@@ -55,57 +55,10 @@ def pytest_runtest_setup(item: pytest.Item) -> None:
 # https://docs.pytest.org/en/latest/reference/reference.html#pytest.hookspec.pytest_report_teststatus
 @pytest.hookimpl
 def pytest_report_teststatus(report, config):
-
     if report.when == "call" and report.passed:
         return report.outcome, "T", ("✅")
     if report.when == "call" and report.failed:
         return report.outcome, "E", ("❌")
-
-
-def pytest_runtest_teardown(item: pytest.Item) -> None:
-    item.stash[done_that_key] = "yes!"
-
-
-@pytest.hookimpl(hookwrapper=True)
-def pytest_runtest_makereport(item: Item, call: CallInfo):
-
-    outcome = yield  # Run all other pytest_runtest_makereport non wrapped hooks
-    report = outcome.get_result()
-
-    if call.when == "call":
-        outcome = call.excinfo
-        try:
-            # Access the test outcome (passed, failed, etc.)
-            test_outcome = "^!!!FAILED!!!^" if outcome else "-PASSED-"
-            # Access the test duration
-            test_duration = call.duration
-            # Access the test ID (nodeid)
-            test_id = item.nodeid
-            output_stash = item.stash.get(test_stash_key, "No value in stash")
-            print("\n")
-            print(
-                boxen(
-                    output_stash,
-                    title="test_stash_key",
-                    subtitle="test_stash_key",
-                    subtitle_alignment="left",
-                    color="green",
-                    padding=1,
-                )
-            )
-            list_markers = [
-                str(getattr(item.own_markers[j], "name"))
-                for j in range(len(item.own_markers))
-            ]
-            all_markers = ("-").join(list_markers)
-
-            with open(FILENAME, "a") as f:  # we need 'a' as it adds each item
-                f.write(
-                    f"{item.name}|{test_id}|{test_outcome}|{test_duration}|{all_markers}|{ item.stash[test_stash_key]}\n"
-                )
-
-        except Exception as e:
-            print("\nERROR:", e)
 
 
 def pytest_report_header(config):

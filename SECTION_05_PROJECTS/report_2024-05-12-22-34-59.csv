@@ -1,0 +1,14 @@
+test_class_multiplication|tests/tests_00_all_hooks/test_class.py::TestApp::test_class_multiplication|-PASSED-|0.00013119960203766823|inner-sanity-db2-db-outer
+test_class_multiplication|tests/tests_00_all_hooks/test_class.py::TestApp::test_class_multiplication|-PASSED-|0.00013119960203766823|inner-sanity-db2-db-outer|$value from test_stash.py$
+test_class_division|tests/tests_00_all_hooks/test_class.py::TestApp::test_class_division|-PASSED-|0.00011280039325356483|inner-db2-outer
+test_class_division|tests/tests_00_all_hooks/test_class.py::TestApp::test_class_division|-PASSED-|0.00011280039325356483|inner-db2-outer|$value from test_stash.py$
+test_fn_example1_pass|tests/tests_00_all_hooks/test_functions.py::test_fn_example1_pass|-PASSED-|0.00032640015706419945|sanity-outer
+test_fn_example1_pass|tests/tests_00_all_hooks/test_functions.py::test_fn_example1_pass|-PASSED-|0.00032640015706419945|sanity-outer|$value from test_stash.py$
+test_fn_example2_pass|tests/tests_00_all_hooks/test_functions.py::test_fn_example2_pass|-PASSED-|0.00081250024959445|inner-sanity
+test_fn_example2_pass|tests/tests_00_all_hooks/test_functions.py::test_fn_example2_pass|-PASSED-|0.00081250024959445|inner-sanity|$value from test_stash.py$
+test_fn_example3_xfail|tests/tests_00_all_hooks/test_functions.py::test_fn_example3_xfail|^!!!FAILED!!!^|0.0003712000325322151|inner-xfail-setup
+test_fn_example3_xfail|tests/tests_00_all_hooks/test_functions.py::test_fn_example3_xfail|^!!!FAILED!!!^|0.0003712000325322151|inner-xfail-setup|$value from test_stash.py$
+test_foo|tests/tests_00_all_hooks/test_record_property.py::test_foo|-PASSED-|0.00021319976076483727|
+test_foo|tests/tests_00_all_hooks/test_record_property.py::test_foo|-PASSED-|0.00021319976076483727||$value from test_stash.py$
+test_bar|tests/tests_00_all_hooks/test_record_property.py::test_bar|-PASSED-|0.0002696998417377472|
+test_bar|tests/tests_00_all_hooks/test_record_property.py::test_bar|-PASSED-|0.0002696998417377472||$value from test_stash.py$
