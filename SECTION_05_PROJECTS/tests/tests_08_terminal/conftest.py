@@ -3,14 +3,16 @@ import random
 import pytest
 
 
+# https://docs.pytest.org/en/latest/reference/reference.html#pytest.hookspec.pytest_report_teststatus
 @pytest.hookimpl
 def pytest_report_teststatus(report, config):
     if report.when == "call" and report.passed:
-        return report.outcome, "T", ("😀", {"yellow": True})
+        return report.outcome, "T", ("✅")
     if report.when == "call" and report.failed:
-        return report.outcome, "E", "😔"
+        return report.outcome, "E", ("❌")
 
 
+# 🆗
 def pytest_runtest_call(item):
     item.add_report_section("call", "custom", "content")
 

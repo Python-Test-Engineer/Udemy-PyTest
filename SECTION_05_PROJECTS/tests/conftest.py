@@ -3,7 +3,7 @@ from datetime import datetime
 from _pytest.nodes import Item
 from _pytest.runner import CallInfo
 
-# timesamp our ouput files
+# timestamp our ouput files
 report_date = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 FILENAME = f"report_{report_date}.csv"
 
