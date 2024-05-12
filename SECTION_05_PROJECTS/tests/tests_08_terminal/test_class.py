@@ -5,7 +5,7 @@ class TestApp:
 
     def test_class_multiplication(self):
 
-        assert True
+        assert False
 
     def test_class_division(self):
 
