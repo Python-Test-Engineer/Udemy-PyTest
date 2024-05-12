@@ -1,12 +1,8 @@
 """
-Plugin code
+Plugin code for pytest-sort package
 """
 
 import pytest
-
-# essential to have version
-__version__ = "0.0.1"
-
 
 print("\n\n")
 
