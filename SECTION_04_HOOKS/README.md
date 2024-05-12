@@ -1,0 +1,1 @@
+pytest --debug gives output of hooks
