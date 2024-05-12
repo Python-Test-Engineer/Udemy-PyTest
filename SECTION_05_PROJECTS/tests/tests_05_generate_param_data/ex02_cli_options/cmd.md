@@ -1,13 +1,11 @@
 
 ## Passing test
 
-python -m pytest -s --stringinput="hello" --stringinput="world" .\tests\tests_ex06_generate_param_data\ex02
+`python -m pytest -s --stringinput="hello" --stringinput="world" .\tests\tests_05_generate_param_data\ex02_cli_options\`
 
 ## Failing test
 
-python -m pytest -s --tb=no --stringinput="!"  .\tests\tests_ex06_generate_param_data\ex02
-
---tb-no is no traceback on failure
+`python -m pytest -s --stringinput="!" .\tests\tests_05_generate_param_data\ex02_cli_options\`
 
 ## Skipped test
 

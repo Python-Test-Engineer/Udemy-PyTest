@@ -1,0 +1,2 @@
+test_valid_string[hello]|tests/tests_05_generate_param_data/ex02_cli_options/test_strings.py::test_valid_string[hello]|-PASSED-|9.379998664371669e-05|
+test_valid_string[world]|tests/tests_05_generate_param_data/ex02_cli_options/test_strings.py::test_valid_string[world]|-PASSED-|8.239998714998364e-05|
