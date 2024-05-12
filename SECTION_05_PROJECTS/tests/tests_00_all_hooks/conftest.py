@@ -34,16 +34,16 @@ def pytest_configure(config):
         file_content  # Store the file content in the pytest config object
     )
 
-    print(
-        boxen(
-            output1,
-            title="Config contents",
-            subtitle="Config contents",
-            subtitle_alignment="left",
-            color="purple4",
-            padding=1,
-        )
-    )
+    # print(
+    #     boxen(
+    #         output1,
+    #         title="Config contents",
+    #         subtitle="Config contents",
+    #         subtitle_alignment="left",
+    #         color="purple4",
+    #         padding=1,
+    #     )
+    # )
 
 
 def pytest_runtest_setup(item: pytest.Item) -> None:

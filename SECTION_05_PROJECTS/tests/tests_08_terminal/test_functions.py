@@ -8,6 +8,7 @@ def test_fn_example2_pass():
     assert True
 
 
-def test_fn_example3():
+def test_fn_example3_xfail():
     """Docstring 3"""
-    assert False
+
+    assert True
