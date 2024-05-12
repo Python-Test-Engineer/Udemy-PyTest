@@ -1,6 +1,15 @@
 # pytest-sort
 
-What are we doing here?
+As there are many moving parts to this project, we will do the following:
+
+1. Have an overview demo of the whole process so that we have a general idea.
+2. Break the project into smaller chunks and work through them.
+3. Have a final summary overview of the process.
+4. Change the plugin name and code so that you can see how to make changes for your own plugin.
+
+  *Most of this is boiler plate code that we don't have to understand - we just need to know what is expected of us for plugin distribution to take place.*
+
+What do we need to do to create and maintain a distributable plugin project/repo?
 
 1. We need to convert the conftest.py into a distributable version rather than asking users to put this file in their code.
 2. We also need to manage our distributable plugin project.
