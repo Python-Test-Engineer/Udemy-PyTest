@@ -1,0 +1,2 @@
+test_class_multiplication|tests/tests_00_all_hooks/test_class.py::TestApp::test_class_multiplication|-PASSED-|9.50000248849392e-05|inner-sanity-db2-db-outer
+test_class_multiplication|tests/tests_00_all_hooks/test_class.py::TestApp::test_class_multiplication|-PASSED-|9.50000248849392e-05|inner-sanity-db2-db-outer|$value from test_stash.py$
