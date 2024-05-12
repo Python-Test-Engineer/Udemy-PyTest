@@ -1,5 +1,4 @@
 import pytest
-import os
 import random
 from datetime import datetime
 from _pytest.nodes import Item
@@ -21,7 +20,7 @@ FILENAME = f"report_store_hook_results_{report_date}.csv"
 
 print("\n\n")
 
-# We must set up stash keys
+# We must create stash keys
 been_there_key = pytest.StashKey[bool]()
 done_that_key = pytest.StashKey[str]()
 test_stash_key = pytest.StashKey[str]()
