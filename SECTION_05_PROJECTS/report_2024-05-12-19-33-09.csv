@@ -1,0 +1,5 @@
+test_class_02|tests/tests_03_sort_tests/tests_sort_randomly/test_class.py::TestApp::test_class_02|-PASSED-|9.520025923848152e-05|inner-db2-outer
+test_fn_05|tests/tests_03_sort_tests/tests_sort_randomly/test_functions.py::test_fn_05|^!!!FAILED!!!^|0.0018269000574946404|inner-xfail-setup
+test_class_01|tests/tests_03_sort_tests/tests_sort_randomly/test_class.py::TestApp::test_class_01|-PASSED-|7.859990000724792e-05|inner-sanity-db2-db-outer
+test_fn_03|tests/tests_03_sort_tests/tests_sort_randomly/test_functions.py::test_fn_03|-PASSED-|0.0009571998380124569|sanity-outer
+test_fn_04|tests/tests_03_sort_tests/tests_sort_randomly/test_functions.py::test_fn_04|-PASSED-|0.000628999900072813|inner-sanity
