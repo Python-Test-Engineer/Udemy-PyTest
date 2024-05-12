@@ -1,8 +1,0 @@
-test_class_02_marked_first|tests/tests_03_sort_tests/tests_sort_first_last/test_class.py::TestApp::test_class_02_marked_first|-PASSED-|0.00010140007361769676|first
-test_fn_02_marked_first|tests/tests_03_sort_tests/tests_sort_first_last/test_functions.py::test_fn_02_marked_first|-PASSED-|0.0006273998878896236|first
-test_fn_05_marked_first|tests/tests_03_sort_tests/tests_sort_first_last/test_functions.py::test_fn_05_marked_first|-PASSED-|0.0005067996680736542|first
-test_class_03_not_first_or_last|tests/tests_03_sort_tests/tests_sort_first_last/test_class.py::TestApp::test_class_03_not_first_or_last|-PASSED-|8.25999304652214e-05|
-test_fn_03_not_marked_first_or_last|tests/tests_03_sort_tests/tests_sort_first_last/test_functions.py::test_fn_03_not_marked_first_or_last|-PASSED-|0.0005548996850848198|
-test_class_01_marked_last|tests/tests_03_sort_tests/tests_sort_first_last/test_class.py::TestApp::test_class_01_marked_last|-PASSED-|0.00017010001465678215|last
-test_fn_01_marked_last|tests/tests_03_sort_tests/tests_sort_first_last/test_functions.py::test_fn_01_marked_last|-PASSED-|0.0008128001354634762|last
-test_fn_04_marked_last|tests/tests_03_sort_tests/tests_sort_first_last/test_functions.py::test_fn_04_marked_last|-PASSED-|0.0005011004395782948|last

@@ -24,6 +24,7 @@ def pytest_generate_tests(metafunc):
         input_file = metafunc.config.getoption("--input_file")
 
         # Read the data from the input file (if specified)
+        # We can load data from any external source that Python supports
         data = []
         if input_file:
             with open(input_file, "r") as f:
