@@ -7,6 +7,6 @@ def input_file_content(request):
 
 
 def test_display_input(input_file_content):
-    print("Content from input file:")
-    print(input_file_content)
-    assert " <test_word>" in input_file_content
+    print("\n\nContent from input file:")
+    print(f"\t{input_file_content}")
+    assert "<test_word>" in input_file_content
