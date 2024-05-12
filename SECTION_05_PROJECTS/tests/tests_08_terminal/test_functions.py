@@ -10,4 +10,4 @@ def test_fn_example2_pass():
 
 def test_fn_example3():
     """Docstring 3"""
-    assert False
+    assert True

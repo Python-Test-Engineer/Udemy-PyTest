@@ -2,6 +2,12 @@ import os
 import random
 import pytest
 
+from pyboxen import boxen
+
+from rich.console import Console
+
+console = Console()
+
 
 # https://docs.pytest.org/en/latest/reference/reference.html#pytest.hookspec.pytest_report_teststatus
 @pytest.hookimpl
@@ -10,6 +16,25 @@ def pytest_report_teststatus(report, config):
         return report.outcome, "T", ("✅")
     if report.when == "call" and report.failed:
         return report.outcome, "E", ("❌")
+
+
+def pytest_report_header(config):
+    if config.getoption("verbose") > 0:
+        output = "📝 ✅ pytest_report_header ❌"
+        print(
+            boxen(
+                output,
+                title="[blue]We can add a report header[/] [black on cyan] here... [/]",
+                subtitle="pytest_report_header",
+                subtitle_alignment="left",
+                color="green",
+                padding=1,
+            )
+        )
+        return [
+            f"\n📝 This is in a hook with a random number {random.randint(10000, 99999)}",
+            "🙋 pytest_report_header data\n",
+        ]
 
 
 # 🆗
@@ -34,4 +59,16 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
         terminalreporter.section(
             "Tests took place in", sep="=", blue=True, bold=True, fullwidth=None
         )
-        print(f"\nROOTDIR: {config.rootdir}\n")
+        # print(f"\nROOTDIR: {config.rootdir}\n")
+        print("\n")
+        output = f"\n✅ ROOTDIR: {config.rootdir} 🆗\n"
+        print(
+            boxen(
+                output,
+                title="[blue]Tests were in directory:[/]",
+                subtitle="END OF DEMO",
+                subtitle_alignment="left",
+                color="green",
+                padding=1,
+            )
+        )
