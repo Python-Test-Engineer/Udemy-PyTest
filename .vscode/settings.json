@@ -2,7 +2,23 @@
    "terminal.integrated.fontSize": 20,
    "python.terminal.activateEnvironment": true,
    "workbench.tree.indent": 20,
-   "editor.wordWrapColumn": 200,
+   "editor.wordWrapColumn": 120,
+   "editor.fontSize": 22,
+   "editor.fontWeight": 500,
+   "editor.fontFamily": "Consolas",
+   "editor.lineHeight": 30,
+   "editor.minimap.maxColumn": 80,
+   "editor.minimap.renderCharacters": false,
+   "editor.minimap.showSlider": "always",
+   "editor.multiCursorModifier": "ctrlCmd",
+   "editor.renderLineHighlight": "all",
+   "editor.renderWhitespace": "all",
+   "editor.rulers": [
+      100
+   ],
+   "editor.tabCompletion": "on",
+   "editor.tabSize": 2,
+   "editor.wordWrap": "off",
    "workbench.startupEditor": "none",
    "html.format.templating": true,
    "workbench.iconTheme": "vscode-icons",
@@ -75,7 +91,6 @@
          "italic": false
       }
    ],
-   "editor.tabSize": 3,
    "editor.tokenColorCustomizations": {
       "comments": "#d4922f"
    },
@@ -92,7 +107,6 @@
    "editor.dropIntoEditor.enabled": false,
    "editor.autoClosingBrackets": "always",
    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-   "editor.wordWrap": "bounded",
    "jupyter.askForKernelRestart": false,
    "files.autoSave": "afterDelay",
    "editor.formatOnPaste": true,
@@ -111,7 +125,6 @@
    "workbench.editorAssociations": {
       "*.exe": "default"
    },
-   "editor.fontSize": 22,
    "[jsonc]": {
       "editor.defaultFormatter": "vscode.json-language-features"
    },
