@@ -37,7 +37,7 @@ def pytest_configure(config):
     )
     print(
         boxen(
-            output1,
+            str(config._input_file_content),
             title="Config contents",
             subtitle="Config contents",
             subtitle_alignment="left",
