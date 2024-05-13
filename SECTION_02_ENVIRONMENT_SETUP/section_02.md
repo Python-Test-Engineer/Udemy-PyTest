@@ -29,6 +29,7 @@ I find it best to:
 - Rich <https://rich.readthedocs.io/en/stable/introduction.html>
 - Pyboxen <https://github.com/savioxavier/pyboxen>
 - examples in SECTION_O2_ENVIRONEMENT > rich_pyboxen_samples
+- colors for Rich/PyBoxen <https://rich.readthedocs.io/en/stable/appendix/colors.html>
 
 ## 05 Packages in requirments.txt
 
