@@ -1,7 +1,0 @@
-test_class_multiplication|tests/tests_00_all_hooks/test_class.py::TestApp::test_class_multiplication|-PASSED-|0.00010079983621835709|inner-sanity-db2-db-outer
-test_class_division|tests/tests_00_all_hooks/test_class.py::TestApp::test_class_division|-PASSED-|8.79000872373581e-05|inner-db2-outer
-test_fn_example1_pass|tests/tests_00_all_hooks/test_functions.py::test_fn_example1_pass|-PASSED-|6.939982995390892e-05|sanity-outer
-test_fn_example2_pass|tests/tests_00_all_hooks/test_functions.py::test_fn_example2_pass|-PASSED-|0.00016949977725744247|inner-sanity
-test_fn_example3_xfail|tests/tests_00_all_hooks/test_functions.py::test_fn_example3_xfail|^!!!FAILED!!!^|0.00013619987294077873|inner-xfail-setup
-test_foo|tests/tests_00_all_hooks/test_record_property.py::test_foo|-PASSED-|7.170019671320915e-05|
-test_bar|tests/tests_00_all_hooks/test_record_property.py::test_bar|-PASSED-|0.00017410004511475563|
