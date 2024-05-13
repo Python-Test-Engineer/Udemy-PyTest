@@ -1,6 +1,8 @@
 {
    "terminal.integrated.fontSize": 20,
    "python.terminal.activateEnvironment": true,
+   "editor.renderLineHighlight": "all",
+   "editor.renderWhitespace": "selection",
    "workbench.tree.indent": 20,
    "editor.wordWrapColumn": 120,
    "editor.fontSize": 22,
@@ -11,8 +13,6 @@
    "editor.minimap.renderCharacters": false,
    "editor.minimap.showSlider": "always",
    "editor.multiCursorModifier": "ctrlCmd",
-   "editor.renderLineHighlight": "all",
-   "editor.renderWhitespace": "all",
    "editor.rulers": [
       100
    ],
@@ -140,7 +140,7 @@
    "vsicons.dontShowNewVersionMessage": true,
    "python.analysis.typeCheckingMode": "strict",
    "python.formatting.provider": "none",
-   "editor.autoIndent": "none",
+   "editor.autoIndent": "keep",
    "workbench.colorTheme": "Material Theme Darker",
    "terminal.integrated.defaultProfile.windows": "PowerShell",
    "animations.Install-Method": "Apc Customize UI++",

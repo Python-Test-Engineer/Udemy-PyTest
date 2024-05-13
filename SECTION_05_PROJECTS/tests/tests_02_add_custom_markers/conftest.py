@@ -5,8 +5,6 @@ In this example we have commented out pytest_runtest_makereport and use the root
 import pytest
 
 
-# from _pytest.nodes import Item
-# from _pytest.runner import CallInfo
 from pyboxen import boxen
 
 print("\n\n")
@@ -15,6 +13,8 @@ print("\n\n")
 # ensure ; addopts = --strict-markers not used or add via config hook otherwise following error cocurs:
 # INTERNALERROR> Failed: 'simple' not found in `markers` configuration option
 def pytest_configure(config):
+    # we register our markers in pytest.ini 'memory' so that we do not get warnings r
+    # errors with regard to pytest.ini and --strict-markers
     config.addinivalue_line("markers", "simple_marker: mark simple test")
     config.addinivalue_line("markers", "complex_marker: mark complex test")
 
@@ -46,3 +46,8 @@ def pytest_collection_modifyitems(items):
                 padding=1,
             )
         )
+
+
+# //
+# ?
+# !
