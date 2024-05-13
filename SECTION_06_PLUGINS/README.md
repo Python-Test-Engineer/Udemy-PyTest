@@ -190,3 +190,5 @@ upload issues:
 
 https://github.com/pypa/flit/issues/122
 I'll leave this open for now because it could be better documented, and I'm considering whether we should support testpypi as a repository without the user needing to configure their .pypirc manually.
+
+https://pypi.org/project/pytest-python-test-engineer-sort/
