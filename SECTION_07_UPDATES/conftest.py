@@ -10,6 +10,9 @@ console = Console()
 
 
 def pytest_configure(config):
+    # project 02
+    config.addinivalue_line("markers", "simple_marker: mark simple test")
+    config.addinivalue_line("markers", "complex_marker: mark complex test")
     # we need to add these markers to avoid error if strict-markers is used.
     config.addinivalue_line("markers", "first: run these tests first")
     config.addinivalue_line("markers", "last: run these tests last")
@@ -35,6 +38,18 @@ def pytest_configure(config):
 
 # A pytest hook to for modifying collected items
 def pytest_collection_modifyitems(items, config):
+    # project 02 custom markers
+    for test in items:
+        if "simple" in test.name:
+            test.add_marker(pytest.mark.simple_marker)
+        if "complex" in test.name:
+            test.add_marker(pytest.mark.complex_marker)
+    print("\n")
+    for test in items:
+        all_keywords = [str(x) for x in test.keywords]
+        all_keywords = (" - ").join(all_keywords)
+
+    # project 03 first and last
     first_tests = []
     last_tests = []
     remaining_tests = []
