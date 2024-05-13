@@ -55,6 +55,22 @@ def pytest_collection_modifyitems(items, config):
     items[:] = first_tests + remaining_tests + last_tests
 
 
+# We must create stash keys
+been_there_key = pytest.StashKey[bool]()
+done_that_key = pytest.StashKey[str]()
+test_stash_key = pytest.StashKey[str]()
+
+
+def pytest_runtest_setup(item: pytest.Item) -> None:
+    item.stash[been_there_key] = True
+    item.stash[done_that_key] = "no"
+    item.stash[test_stash_key] = "$value from test_stash.py$"
+
+
+def pytest_runtest_teardown(item: pytest.Item) -> None:
+    item.stash[done_that_key] = "yes!"
+
+
 def pytest_generate_tests(metafunc):
     if "dataset" in metafunc.fixturenames:
         metafunc.parametrize("dataset", range(10))
