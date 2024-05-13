@@ -180,3 +180,11 @@ If you change the plugin_sort.py or any other plugin file, uninstall the plugin,
 To uninstall the plugin:
 
 `pip uninstall .\dist\pytest_sort-0.0.1-py3-none-any.whl` (change .whl name as per your project).
+
+upload issues:
+
+- pip install keyring if using usb
+- CTRL+SHIFT+C/V for password on Windows
+- flit --repository testpypi publish
+-  .
+ensure git commit done
