@@ -116,6 +116,7 @@ def pytest_report_teststatus(report, config):
 def pytest_report_header(config):
     if config.getoption("verbose") > 0:
         output = "📝 ✅ pytest_report_header ❌"
+        print("\n")
         print(
             boxen(
                 output,
@@ -153,13 +154,11 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
     if content:
         # https://docs.pytest.org/en/7.1.x/reference/reference.html?highlight=record_property#std-fixture-record_property
         terminalreporter.ensure_newline()
-        terminalreporter.section("record_property", sep="-", red=True, bold=True)
+        terminalreporter.section("record_property", sep="=", blue=True, bold=True)
         terminalreporter.line(content)
 
         terminalreporter.ensure_newline()
-        terminalreporter.section(
-            "Tests took place in", sep="=", blue=True, bold=True, fullwidth=None
-        )
+        terminalreporter.section("Tests took place in", sep="=", blue=True, bold=True)
         # print(f"\nROOTDIR: {config.rootdir}\n")
 
         output = f"✅ ROOTDIR: {config.rootdir} 🆗"
