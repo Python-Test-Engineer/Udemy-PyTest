@@ -23,7 +23,14 @@ root
 │   ├── pytest_runtest_logstart
 │   ├── pytest_runtest_setup
 │   ├── ├── pytest_fixture_setup
+│   ├── pytest_runtest_makereport
+│   ├── pytest_runtest_logreport
+│   ├── ├── pytest_report_teststatus
+│   ├── pytest_runtest_call
+│   ├── ├── pytest_pyfunc_call
+│   ├── pytest_runtest_teardown
+│   ├── ├── pytest_fixture_post_finalizer
+│   ├── pytest_runtest_logfinish
 ├── pytest_session_finish
 │   │   ├──pytest_terminal_summary
-│   │   ├──pytest_make_collect_report
 ├── pytest_unconfigure
