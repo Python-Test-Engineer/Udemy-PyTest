@@ -24,6 +24,11 @@ print("\n\n")
 
 def pytest_configure(config):
 
+    config.input_file_content = "input_file_content no leading _"
+    config.my_global_value = "Shared Value"
+    # This is available via the request built in fixture so can be accessed in tests
+    # global_value = request.config.my_global_value
+
     output1 = str(dir(config))
     # Get the path to the text file in the same directory as conftest.py
     current_directory = os.path.dirname(os.path.abspath(__file__))
@@ -32,19 +37,10 @@ def pytest_configure(config):
     # Read the content of the file and store it in the pytest config object
     with open(input_file_path, "r") as file:
         file_content = file.read()
-    config._input_file_content = (
-        file_content  # Store the file content in the pytest config object
-    )
-    print(
-        boxen(
-            str(config._input_file_content),
-            title="Config contents",
-            subtitle="Config contents",
-            subtitle_alignment="left",
-            color="purple4",
-            padding=1,
-        )
-    )
+
+    # _input_file_content seems to be special in that in can be a fixture.abs
+    # underscore does not work with my_global_value
+    config._input_file_content = file_content
 
 
 @pytest.hookimpl(hookwrapper=True)
