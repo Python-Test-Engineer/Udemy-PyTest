@@ -1,6 +1,6 @@
 root
 ├── pytest_cmdline_main
-├── pytest_plugin_registerd
+├── pytest_plugin_registered
 ├── pytest_configure
 │   ├── pytest_plugin_registered
 ├── pytest_session_start

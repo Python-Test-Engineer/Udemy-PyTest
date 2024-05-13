@@ -18,10 +18,10 @@ I find it best to:
 
 ## 03 Editor and extensions
 
-- theme
+- theme is material theme darker
 - extensions rainbow indent
 - setting.json
-- explorer on right
+- explorer on right: view > appearance > move primary bar
 - font sizes larger for recordings
 
 ## 04 Console formatting
