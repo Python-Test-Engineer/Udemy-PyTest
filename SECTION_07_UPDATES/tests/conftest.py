@@ -52,6 +52,10 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
             # Access the test ID (nodeid)
 
             test_id = item.nodeid
+            
+            # this would run for every test but we only want it for tests that have stash in nodeid
+            # an example of how naming of tests can be useful
+            # we could have made a marker called 'get_stash' etc
             if "stash" in item.nodeid:
                 output1 = item.stash.get(test_stash_key, "No value in stash")
                 print("\n")
