@@ -3,6 +3,8 @@ from datetime import datetime
 from _pytest.nodes import Item
 from _pytest.runner import CallInfo
 
+# we will get two reports as there is the hook here for educational purposes but also in the root of our projects
+
 # timesamp our output files
 report_date = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 FILENAME = f"report_make_report_{report_date}.csv"
@@ -12,6 +14,8 @@ print("\n\n")
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item: Item, call: CallInfo):
+    # item is actuall a test so we may use for test in Item rather than for item in Item
+    # call is an event that is one of setup - call - teardown
 
     # item is a collection of tests so we may use for test in Item rather than for item in Item
     # https://docs.pytest.org/en/7.1.x/reference/reference.html?highlight=call#item

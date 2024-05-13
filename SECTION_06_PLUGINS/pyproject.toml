@@ -3,13 +3,13 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "pytest-sort" # PyPi prefers dashes so replace underscores with dashes
+name = "pytest-python-test-engineer-sort" # PyPi prefers dashes so replace underscores with dashes
 
 authors = [{ name = "Craig West", email = "craig@example.com" }]
 readme = "README.md"
 classifiers = ["License :: OSI Approved :: MIT License", "Framework :: Pytest"]
 # dynamic = ["version", "description"]
-version = "0.0.1"
+version = "0.0.2"
 description = "Sort plugin for Pytest"
 dependencies = ["pytest>=6.2.0"]
 requires-python = ">=3.7"
