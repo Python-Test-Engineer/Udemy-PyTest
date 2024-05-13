@@ -12,6 +12,8 @@ print("\n\n")
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item: Item, call: CallInfo):
+    # item is actuall a test so we may use for test in Item rather than for item in Item
+    # call is an event that is one of setup - call - teardown
 
     # item is a collection of tests so we may use for test in Item rather than for item in Item
     # https://docs.pytest.org/en/7.1.x/reference/reference.html?highlight=call#item
