@@ -186,5 +186,7 @@ upload issues:
 - pip install keyring if using usb
 - CTRL+SHIFT+C/V for password on Windows
 - flit --repository testpypi publish
--  .
-ensure git commit done
+- ensure git commit done
+
+https://github.com/pypa/flit/issues/122
+I'll leave this open for now because it could be better documented, and I'm considering whether we should support testpypi as a repository without the user needing to configure their .pypirc manually.
