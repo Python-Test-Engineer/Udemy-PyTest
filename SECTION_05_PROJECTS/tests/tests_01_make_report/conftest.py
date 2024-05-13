@@ -3,6 +3,8 @@ from datetime import datetime
 from _pytest.nodes import Item
 from _pytest.runner import CallInfo
 
+# we will get two reports as there is the hook here for educational purposes but also in the root of our projects
+
 # timesamp our output files
 report_date = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 FILENAME = f"report_make_report_{report_date}.csv"
