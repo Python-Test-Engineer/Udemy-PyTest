@@ -1,5 +1,7 @@
 What does item.keywords give us?
 
+A name -> value dictionary containing all keywords and markers associated with a test invocation <https://docs.pytest.org/en/7.1.x/reference/reference.html?highlight=keywords#pytest.TestReport.keywords>
+
 We will go through this code later but for now...
 
 ```
@@ -17,20 +19,22 @@ When we run the above we see that we get where I have used the pipe operator '|'
 test_class_multiplication|tests/tests_ex03_sort_tests/tests_sort_by_testname/test_class.py::TestApp::test_class_multiplication|-PASSED-|9.980006143450737e-05|inner-sanity-db2-db-outer  
 
 
-nodeid = tests/tests_ex03_sort_tests/tests_sort_by_testname/test_class.py::TestApp::test_class_multiplication_FH8
-Keywords: 
+nodeid: 
+tests/tests_ex03_sort_tests/tests_sort_by_testname/test_class.py::TestApp::test_class_multiplication_FH8
+
+keywords: 
 
 test_class_multiplication - inner-sanity-db2-db-outer - test_class.py - tests_01_playground - tests - SANDBOX -  UDEMY-PYTEST
 
-This we get:
+Thus we get:
 
 test name:        test_class_multiplication
-markers:          inner-sanity-db2-db-outer (our delimeter)
+markers:          inner-sanity-db2-db-outer (our delimeter - added between)
 file_name:        test_class.py
 parent folder:    tests
-gnext up folder:  SANDBOX
+next up folder:  SANDBOX etc...
 root folder:      UDEMY-PYTEST
 
-We can thus order tests by any of these keywords if we want. We can split the node and get the chosed 'bit' and then do a sort based on that key.
+We can thus order tests by any of these keywords if we want. We can split the node and get the chosen   'bit' and then do a sort based on that key.
 
 https://docs.python.org/3/howto/sorting.html#key-functions
