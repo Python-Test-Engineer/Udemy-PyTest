@@ -1,9 +1,9 @@
 import pytest
 
 
-def test_fn_example1_pass():
+def test_fn_example1_fail():
     """Docstring 1"""
-    assert True
+    assert False
 
 
 @pytest.mark.skip

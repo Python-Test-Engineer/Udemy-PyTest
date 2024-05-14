@@ -18,19 +18,16 @@ def pytest_report_teststatus(report, config):
         return report.outcome, "T", ("✅")
     if report.when == "call" and report.failed:
         return report.outcome, "E", ("❌")
-
-    # Handle error and skipped in setup and teardown phase
-    if report.when in ("setup", "teardown", "call") and report.skipped:
-        return report.outcome, "🙄 ", "SKIPPED 🙄 "
+    # Handle xfailed and xpassed
     if hasattr(report, "wasxfail"):
         if report.skipped:
-            short, verbose = config.hook.pytest_emoji_xfailed(config=config)
-            return report.outcome, "🙄 ", "XFAIL ❌ "
-        # elif report.passed:
-        #     short, verbose = config.hook.pytest_emoji_xpassed(config=config)
-        #     return "xpassed", short, verbose
+            return "xfailed", "x", ("XFAIL ✅")
+        elif report.passed:
+            return "xpassed", "x", ("XPASS ❌")
         else:
             return "", "", ""
+    if report.when in ("setup", "teardown", "call") and report.skipped:
+        return report.outcome, "s", "SKIPPED 🙄 "
 
 
 def pytest_report_header(config):
