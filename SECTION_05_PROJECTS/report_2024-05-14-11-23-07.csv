@@ -1,0 +1,7 @@
+test_class_multiplication|tests/tests_08_terminal/test_class.py::TestApp::test_class_multiplication|-PASSED-|9.950000094249845e-05|
+test_class_division|tests/tests_08_terminal/test_class.py::TestApp::test_class_division|-PASSED-|7.979996735230088e-05|
+test_fn_example1_fail|tests/tests_08_terminal/test_functions.py::test_fn_example1_fail|^!!!FAILED!!!^|0.00022220000391826034|
+test_fn_example_xpass|tests/tests_08_terminal/test_functions.py::test_fn_example_xpass|-PASSED-|0.00010090001160278916|xfail
+test_fn_example3_xfail|tests/tests_08_terminal/test_functions.py::test_fn_example3_xfail|^!!!FAILED!!!^|0.00012199999764561653|xfail
+test_foo|tests/tests_08_terminal/test_record_property.py::test_foo|^!!!FAILED!!!^|0.00024129997473210096|
+test_bar|tests/tests_08_terminal/test_record_property.py::test_bar|-PASSED-|9.370001498609781e-05|

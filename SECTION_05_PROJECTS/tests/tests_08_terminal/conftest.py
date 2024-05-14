@@ -27,8 +27,9 @@ def pytest_report_teststatus(report, config):
     if report.when in ("setup", "teardown", "call") and report.skipped:
         return report.outcome, "s", "SKIPPED 🙄 "
     if report.when == "call" and report.passed:
-        # we can style the text in long formats
-        return report.outcome, "T", ("PASSED ✅", {"blue": True})
+        # we can style the text in long formats. Just color and bold no italic
+        # does not work for error?
+        return report.outcome, "T", ("PASSED ✅", {"blue": True, "bold": True})
     if report.when == "call" and report.failed:
         return report.outcome, "E", ("ERROR ❌")
 
@@ -87,17 +88,6 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
             boxen(
                 output,
                 title="[blue]Tests were in directory:[/]",
-                subtitle="END OF DEMO",
-                subtitle_alignment="left",
-                color="green",
-                padding=1,
-            )
-        )
-
-        print(
-            boxen(
-                str(dir(config.stash)),
-                title="Contents of CONFIG",
                 subtitle="END OF DEMO",
                 subtitle_alignment="left",
                 color="green",
