@@ -181,3 +181,16 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
                 padding=1,
             )
         )
+
+        output = f"\nconfig.input_file_content: {config.input_file_content} 🆗"
+        output += f"\nconfig.config.my_global_value: {config.my_global_value} 🆗"
+        print(
+            boxen(
+                output,
+                title="[blue]Config[/]",
+                subtitle="END OF DEMO",
+                subtitle_alignment="left",
+                color="green",
+                padding=1,
+            )
+        )

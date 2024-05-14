@@ -4,9 +4,10 @@ content02 = "our info we added in test_bar 📝 "
 # https://docs.pytest.org/en/7.1.x/reference/reference.html?highlight=record_property#std-fixture-record_property
 
 
-def test_foo(record_property):
+def test_foo(record_property, request):
     # records a key-value pair
     record_property("recorded in test_bar-> data01", content01)
+    request.config.my_global_value("CHANGED in test_foo")
 
 
 def test_bar(record_property):

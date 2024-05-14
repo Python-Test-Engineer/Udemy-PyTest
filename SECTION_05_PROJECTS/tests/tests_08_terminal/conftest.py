@@ -93,3 +93,14 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
                 padding=1,
             )
         )
+
+        print(
+            boxen(
+                str(dir(config.stash)),
+                title="Contents of CONFIG",
+                subtitle="END OF DEMO",
+                subtitle_alignment="left",
+                color="green",
+                padding=1,
+            )
+        )
