@@ -45,7 +45,7 @@ def pytest_configure(config):
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item: Item, call: CallInfo):
-
+    # an item is one test and this hook will run many times in test loop
     outcome = yield  # Run all other pytest_runtest_makereport non wrapped hooks
 
     if call.when == "call":

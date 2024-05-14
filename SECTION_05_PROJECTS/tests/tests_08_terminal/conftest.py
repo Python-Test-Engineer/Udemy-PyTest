@@ -9,9 +9,7 @@ from rich.console import Console
 console = Console()
 
 
-# https://docs.pytest.org/en/latest/reference/reference.html#pytest.hookspec.pytest_report_teststatus
-# This adds icons to test result.
-# I can only get it to work with passed and failed but xfail should be possible.
+# report is report for a single test
 @pytest.hookimpl
 def pytest_report_teststatus(report, config):
     # order seems to matter as the xpassed did not work when after passed
