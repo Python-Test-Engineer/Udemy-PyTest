@@ -51,13 +51,13 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
             test_duration = call.duration
             # Access the test ID (nodeid)
             test_id = item.nodeid
-            output1 = item.stash.get(test_stash_key, "No value in stash")
+            output1 = "I run for every test"
             print("\n")
             print(
                 boxen(
                     output1,
-                    title="test_stash_key",
-                    subtitle="test_stash_key",
+                    title="pytest_runtest_makereport Item",
+                    subtitle="pytest_runtest_makereport Item",
                     subtitle_alignment="left",
                     color="green",
                     padding=1,
