@@ -20,20 +20,14 @@ FILENAME = f"report_store_hook_results_{report_date}.csv"
 
 print("\n\n")
 
-# We must create stash keys
-been_there_key = pytest.StashKey[bool]()
-done_that_key = pytest.StashKey[str]()
-test_stash_key = pytest.StashKey[str]()
+# We can have a global key that will store the plugin/conftest name
+# We must create stash keys and it is in a per test basis so need a hook with item
+which_plugin = pytest.StashKey[str]()
 
 
 def pytest_runtest_setup(item: pytest.Item) -> None:
-    item.stash[been_there_key] = True
-    item.stash[done_that_key] = "no"
-    item.stash[test_stash_key] = "$value from test_stash.py$"
 
-
-def pytest_runtest_teardown(item: pytest.Item) -> None:
-    item.stash[done_that_key] = "yes!"
+    item.stash[which_plugin] = "$tests_07_store_hook_results$"
 
 
 @pytest.hookimpl(hookwrapper=True)
@@ -51,7 +45,15 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
             test_duration = call.duration
             # Access the test ID (nodeid)
             test_id = item.nodeid
-            output1 = "I run for every test"
+            list_markers = [
+                str(getattr(item.own_markers[j], "name"))
+                for j in range(len(item.own_markers))
+            ]
+            all_markers = ("-").join(list_markers)
+            if all_markers == "":
+                all_markers = "NONE"
+            output1 = f"I run for every test and my markers are:\n {all_markers}"
+
             print("\n")
             print(
                 boxen(
@@ -63,15 +65,10 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
                     padding=1,
                 )
             )
-            list_markers = [
-                str(getattr(item.own_markers[j], "name"))
-                for j in range(len(item.own_markers))
-            ]
-            all_markers = ("-").join(list_markers)
 
             with open(FILENAME, "a") as f:  # we need 'a' as it adds each item
                 f.write(
-                    f"{item.name}|{test_id}|{test_outcome}|{test_duration}|{all_markers}|{ item.stash[test_stash_key]}\n"
+                    f"{item.name}|{test_id}|{test_outcome}|{test_duration}|{all_markers}|{ item.stash[which_plugin]}\n"
                 )
 
         except Exception as e:
