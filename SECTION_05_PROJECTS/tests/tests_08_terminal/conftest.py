@@ -18,6 +18,7 @@ def pytest_report_teststatus(report, config):
     # Handle xfailed and xpassed
     if hasattr(report, "wasxfail"):
         if report.skipped:
+            # short desc, long desc
             return "xfailed", "x", ("XFAIL ✅")
         elif report.passed:
             return "xpassed", "❌", ("XPASS ✅❌")
@@ -26,7 +27,8 @@ def pytest_report_teststatus(report, config):
     if report.when in ("setup", "teardown", "call") and report.skipped:
         return report.outcome, "s", "SKIPPED 🙄 "
     if report.when == "call" and report.passed:
-        return report.outcome, "T", ("✅")
+        # we can style the text in long formats
+        return report.outcome, "T", ("PASSED ✅", {"blue": True})
     if report.when == "call" and report.failed:
         return report.outcome, "E", ("ERROR ❌")
 
