@@ -28,7 +28,7 @@ def pytest_report_teststatus(report, config):
     if report.when == "call" and report.passed:
         return report.outcome, "T", ("✅")
     if report.when == "call" and report.failed:
-        return report.outcome, "E", ("❌")
+        return report.outcome, "E", ("ERROR ❌")
 
 
 def pytest_report_header(config):
