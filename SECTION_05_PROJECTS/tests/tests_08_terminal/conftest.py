@@ -20,7 +20,7 @@ def pytest_report_teststatus(report, config):
         if report.skipped:
             return "xfailed", "x", ("XFAIL ✅")
         elif report.passed:
-            return "xpassed", "❌", ("XPASS ❌")
+            return "xpassed", "❌", ("XPASS ✅❌")
         else:
             return "", "", ""
     if report.when in ("setup", "teardown", "call") and report.skipped:
