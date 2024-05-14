@@ -52,23 +52,11 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
             # Access the test ID (nodeid)
 
             test_id = item.nodeid
-            
+
             # this would run for every test but we only want it for tests that have stash in nodeid
             # an example of how naming of tests can be useful
             # we could have made a marker called 'get_stash' etc
-            if "stash" in item.nodeid:
-                output1 = item.stash.get(test_stash_key, "No value in stash")
-                print("\n")
-                print(
-                    boxen(
-                        output1,
-                        title="test_stash_key",
-                        subtitle="test_stash_key",
-                        subtitle_alignment="left",
-                        color="green",
-                        padding=1,
-                    )
-                )
+
             list_markers = [
                 str(getattr(item.own_markers[j], "name"))
                 for j in range(len(item.own_markers))
@@ -77,7 +65,7 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
 
             with open(FILENAME, "a") as f:  # we need 'a' as it adds each item
                 f.write(
-                    f"{item.name}|{test_id}|{test_outcome}|{test_duration}|{all_markers}|{ item.stash[test_stash_key]}\n"
+                    f"{item.name}|{test_id}|{test_outcome}|{test_duration}|{all_markers}\n"
                 )
 
         except Exception as e:
