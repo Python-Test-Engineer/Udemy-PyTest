@@ -105,12 +105,21 @@ def pytest_generate_tests(metafunc):
 # I can only get it to work with passed and failed but xfail should be possible.
 @pytest.hookimpl
 def pytest_report_teststatus(report, config):
+    # order seems to matter as the xpassed did not work when after passed
+    # Handle xfailed and xpassed
+    if hasattr(report, "wasxfail"):
+        if report.skipped:
+            return "xfailed", "x", ("XFAIL ✅")
+        elif report.passed:
+            return "xpassed", "❌", ("XPASS ❌")
+        else:
+            return "", "", ""
+    if report.when in ("setup", "teardown", "call") and report.skipped:
+        return report.outcome, "s", "SKIPPED 🙄 "
     if report.when == "call" and report.passed:
         return report.outcome, "T", ("✅")
     if report.when == "call" and report.failed:
-        return report.outcome, "E", ("❌")
-    # if report.when == "call" and report.xfail:
-    #     return report.outcome, ".", ("✅")
+        return report.outcome, "E", ("ERROR ❌")
 
 
 def pytest_report_header(config):
