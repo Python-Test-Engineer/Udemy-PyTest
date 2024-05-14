@@ -34,6 +34,7 @@ def pytest_runtest_setup(item: pytest.Item) -> None:
 def pytest_runtest_makereport(item: Item, call: CallInfo):
 
     outcome = yield  # Run all other pytest_runtest_makereport non wrapped hooks
+
     report = outcome.get_result()
 
     if call.when == "call":
