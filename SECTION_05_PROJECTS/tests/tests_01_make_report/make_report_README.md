@@ -1,6 +1,23 @@
+python -m pytest -vs --tb=no .\tests\tests_01_make_report\
+
+--tb=no does not displau trace back.
+
+https://docs.pytest.org/en/7.1.x/how-to/output.html
+
+- pytest --showlocals # show local variables in tracebacks
+pytest --tb=auto    # (default) 'long' tracebacks for the first and last
+- pytest -l           # show local variables (shortcut)
+                   # entry, but 'short' style for the other entries
+- pytest --tb=long    # exhaustive, informative traceback formatting
+- pytest --tb=short   # shorter traceback format
+- pytest --tb=line    # only one line per failure
+- pytest --tb=native  # Python standard library formatting
+- pytest --tb=no      # no traceback at all
+
 https://docs.pytest.org/en/7.1.x/how-to/writing_hook_functions.html#:~:text=hookwrapper%3A%20executing%20around%20other%20hooks,function%20which%20yields%20exactly%20once.
 
 hookwrapper: executing around other hooks
+
 pytest plugins can implement hook wrappers which wrap the execution of other hook implementations. A hook wrapper is a generator function which yields exactly once. When pytest invokes hooks it first executes hook wrappers and passes the same arguments as to the regular hooks.
 
 At the yield point of the hook wrapper pytest will execute the next hook implementations and return their result to the yield point in the form of a Result instance which encapsulates a result or exception info. The yield point itself will thus typically not raise exceptions (unless there are bugs).
