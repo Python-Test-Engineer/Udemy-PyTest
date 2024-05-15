@@ -1,4 +1,8 @@
-print("\n\n")
+from pyboxen import boxen
+
+from rich.console import Console
+
+console = Console()
 
 
 # A pytest hook to for modifying collected items
@@ -6,23 +10,41 @@ def pytest_collection_modifyitems(items, config):
 
     selected = []
     deselected = []
-    for item in items:
-
+    for test in items:
+        # get a string of markers separated with '-'
         list_markers = [
-            str(getattr(item.own_markers[j], "name"))
-            for j in range(len(item.own_markers))
+            str(getattr(test.own_markers[j], "name"))
+            for j in range(len(test.own_markers))
         ]
         all_markers = ("-").join(list_markers)
+        # for educational purposes we will also get all the keywords. We could then filter based on kewyords - see KEYWORDS.md in this folder if you need refreshing.
+        all_keywords = [str(x) for x in test.keywords]
+        all_keywords = (" - ").join(all_keywords)
+        output = f"\nKeywords: {all_keywords}"
+
+        print(
+            boxen(
+                output,
+                title=f"[blue]Keywords for {test.nodeid}[/]",
+                subtitle="",
+                subtitle_alignment="left",
+                color="green",
+                padding=1,
+            )
+        )
+
+        # keyword order is
+        # test name - markers - module name - folder - parent folder/grandparent folder - root folder
         # expensive in test name
-        if "expensive" in item.nodeid:
-            deselected.append(item)
+        if "expensive" in test.nodeid:
+            deselected.append(test)
         # expensive in markers
         # we could use -m flag in CLI to skip expensive tests but we might have more compled
         # logic in test functions to skip tests and this may be useful
         elif "expensive" in all_markers:
-            deselected.append(item)
+            deselected.append(test)
         else:
-            selected.append(item)
+            selected.append(test)
 
     # Update the deselected tests
     config.hook.pytest_deselected(items=deselected)

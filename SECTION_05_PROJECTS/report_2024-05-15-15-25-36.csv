@@ -1,0 +1,6 @@
+test_z|tests/tests_03_sort_tests/tests_sort_by_testname/test_sort.py::test_z|-PASSED-|0.00017870000010589138|
+test_y|tests/tests_03_sort_tests/tests_sort_by_testname/test_sort.py::test_y|-PASSED-|0.0001331999992544297|
+test_x|tests/tests_03_sort_tests/tests_sort_by_testname/test_sort.py::test_x|-PASSED-|0.00014379999993252568|
+test_s|tests/tests_03_sort_tests/tests_sort_by_testname/test_sort.py::test_s|-PASSED-|6.940000093891285e-05|
+test_r|tests/tests_03_sort_tests/tests_sort_by_testname/test_sort.py::test_r|-PASSED-|8.289999823318794e-05|
+test_a|tests/tests_03_sort_tests/tests_sort_by_testname/test_sort.py::test_a|-PASSED-|7.079999704728834e-05|
