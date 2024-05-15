@@ -5,10 +5,10 @@
 
 ## What we are doing in this project:
 
-Based on the test name, we determin if it contains 'simple' or complex.
-We then add markers dynamically called 'simple-marker' or 'complex-marker'
-This will enable us to do `python -m pytest -m simple-marker` to run tests for just these ones.
-This is a simple example but we might have a far more complex selection requirement that spans many folders etc.
+- Based on the test name, we determin if it contains 'simple' or complex.
+- We then add markers dynamically called 'simple-marker' or 'complex-marker'
+- for just these ones.
+- This is a simple example but we might have a far more complex selection requirement that spans many folders etc.
 
 `pytest_collection_modifyitems` hook gathers all the tests in the same way --collect-only in the CLI just gives a list of tests PyTest has discovered based on our CLI command.
 
@@ -20,6 +20,14 @@ pytest-collect-only-flag.png
 ## When might we want to add markers dynamically?
 
 Imagine having hundreds of tests and we want to make a custom selection based on terms in the file name, (we discussed the way test names could be used not just for descriptions but also for filtering).
+
+
+e.g. select tests for tests that have:
+
+- db in test name
+- duration > 10s (cross refernece to our output file of test results)
+- only for the test folders (DB and API)
+- create a marker 'db-api-slow'
 
 Let's say we have test names that have one of 'model, integration or api' and we ant to be able to add markers with these names so that we can use the -m flag to select by markers.
 
