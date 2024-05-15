@@ -33,10 +33,10 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
     outcome = yield
     # report = outcome.get_result() # for reference
 
-    # when can be setup, call or teardown
+    # whe is a property that can be  one of setup, call or teardown.
     if call.when == "call":
 
-        # outcomes can be passed, failed, skipped, xfail, xpass, deselected
+        # outcomes can be passed, failed, skipped, xfail, xpass, deselected.AttributeError
         outcome = call.excinfo
 
         try:
