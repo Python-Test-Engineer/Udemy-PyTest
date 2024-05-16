@@ -1,0 +1,3 @@
+test_foo|tests/tests_07_store_hook_results/test_record_property.py::test_foo|-PASSED-|0.00013389999912760686|
+test_bar|tests/tests_07_store_hook_results/test_record_property.py::test_bar|-PASSED-|8.549999984097667e-05|
+test_fn_stash|tests/tests_07_store_hook_results/test_stash.py::test_fn_stash|-PASSED-|8.8099999629776e-05|inner-first

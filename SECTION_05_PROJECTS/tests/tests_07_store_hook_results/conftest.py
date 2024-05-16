@@ -26,7 +26,7 @@ which_plugin = pytest.StashKey[str]()
 
 
 def pytest_runtest_setup(item: pytest.Item) -> None:
-
+    # $ not needed - just to illustrate
     item.stash[which_plugin] = "$tests_07_store_hook_results$"
 
 
@@ -69,7 +69,7 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
 
             with open(FILENAME, "a") as f:  # we need 'a' as it adds each item
                 f.write(
-                    f"{item.name}|{test_id}|{test_outcome}|{test_duration}|{all_markers}|{ item.stash[which_plugin]}\n"
+                    f"{item.name}|{test_id}|{test_outcome}|{test_duration}|{all_markers}|{item.stash[which_plugin]}\n"
                 )
 
         except Exception as e:
