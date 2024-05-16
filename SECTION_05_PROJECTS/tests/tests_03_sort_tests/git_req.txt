@@ -1,0 +1,1 @@
+package-two @ git+https://github.com/owner/repo@main
