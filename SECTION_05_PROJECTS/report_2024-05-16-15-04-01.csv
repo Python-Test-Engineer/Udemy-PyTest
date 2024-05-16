@@ -1,0 +1,4 @@
+test_read_from_file[Apples]|tests/tests_05_generate_param_data/ex03_data_from_file/test_dynamic_param.py::test_read_from_file[Apples]|-PASSED-|8.590001380071044e-05|
+test_read_from_file[Bananas]|tests/tests_05_generate_param_data/ex03_data_from_file/test_dynamic_param.py::test_read_from_file[Bananas]|-PASSED-|8.81000014487654e-05|
+test_read_from_file[Cherries]|tests/tests_05_generate_param_data/ex03_data_from_file/test_dynamic_param.py::test_read_from_file[Cherries]|-PASSED-|7.740000728517771e-05|
+test_read_from_file[Oranges]|tests/tests_05_generate_param_data/ex03_data_from_file/test_dynamic_param.py::test_read_from_file[Oranges]|-PASSED-|7.860000187065452e-05|
