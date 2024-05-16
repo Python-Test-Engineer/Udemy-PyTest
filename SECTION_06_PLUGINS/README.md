@@ -1,5 +1,9 @@
 # pytest-sort
 
+We will use the plugin/conftest file of 'sort_by_testname1 as our plugin. It has a CLI flag of --desc to reverse the order.
+
+Out plugin will have the name pytest-sort as PyPi etc prefers '-' to '_'.
+
 As there are many moving parts to this project, we will do the following:
 
 1. Have an overview demo of the whole process so that we have a general idea.
@@ -9,12 +13,15 @@ As there are many moving parts to this project, we will do the following:
 
   *Most of this is boiler plate code that we don't have to understand - we just need to know what is expected of us for plugin distribution to take place.*
 
+We will use `flit` which is a lighter weight package manager as we want to make production of .whl files as easy as possible. .whl or wheel files will be explained a bit later...
+
 What do we need to do to create and maintain a distributable plugin project/repo?
 
 1. We need to convert the conftest.py into a distributable version rather than asking users to put this file in their code.
 2. We also need to manage our distributable plugin project.
 3. We need to test that the plugin does what we want it to do, (sort by test name).
-4. We also need to test that the plugin once installed by user sorts by test name and the --desc flag works.
+4. We also need to test that the plugin once installed by user sorts by test name and the --desc flag works. Once users have installed the plugin they will just use `python -m pytests` or `python -m pytest --desc`.
+
 
 So we now have a plugin project to maintain.
 
