@@ -3,7 +3,7 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "pytest-python-test-engineer-sort" # PyPi prefers dashes so replace underscores with dashes
+name = "pytest-asc-desc" # PyPi prefers dashes so replace underscores with dashes
 
 authors = [{ name = "Craig West", email = "craig@example.com" }]
 readme = "README.md"
@@ -18,10 +18,10 @@ requires-python = ">=3.7"
 Home = "https://github.com/python-test-engineer/Udemy-PyTest"
 
 [project.entry-points.pytest11]
-sort_name = "pytest_sort" # sort_name can be any name, the main thing is the entry point points to the plugin `pytest_sort` 
+sort_name = "pytest_sort_asc_desc" # sort_name can be any name, the main thing is the entry point points to the plugin `pytest_sort` 
 
 [project.optional-dependencies]
 test = ["tox"]
 # 
 [tool.flit.module]
-name = "pytest_sort" # module must match plugin py file so use '_'
+name = "pytest_sort_asc_desc" # module must match plugin py file so use '_'
