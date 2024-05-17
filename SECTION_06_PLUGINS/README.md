@@ -75,22 +75,22 @@ Once we install our plugin, we get test sorted alphabetically
 `python -m pytest -v`
 
 ```
-src/test_sort.py::test_a PASSED
-src/test_sort.py::test_r PASSED
-src/test_sort.py::test_s PASSED
-src/test_sort.py::test_x PASSED
-src/test_sort.py::test_y PASSED
-src/test_sort.py::test_zPASSED
+src/test_sort.py::test_1 PASSED      
+src/test_sort.py::test_2 PASSED                     
+src/test_sort.py::test_3 PASSED
+src/test_sort.py::test_4 PASSED
+src/test_sort.py::test_5 PASSED 
+src/test_sort.py::test_6 PASSED 
 ```
 and with the --desc flag ``python -m pytest -v --desc` we get the reverse:
 
 ```
-src/test_sort.py::test_z PASSED
-src/test_sort.py::test_y PASSED
-src/test_sort.py::test_x PASSED
-src/test_sort.py::test_s PASSED
-src/test_sort.py::test_r PASSED
-src/test_sort.py::test_a PASSED
+src/test_sort.py::test_6 PASSED
+src/test_sort.py::test_5 PASSED
+src/test_sort.py::test_4 PASSED
+src/test_sort.py::test_3 PASSED
+src/test_sort.py::test_2 PASSED
+src/test_sort.py::test_1 PASSED
 ```
 as well as 
 ```

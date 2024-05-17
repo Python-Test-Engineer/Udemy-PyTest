@@ -11,12 +11,12 @@ def test_sort(pytester, examples):
 
     result.stdout.fnmatch_lines(
         [
-            "*test_sort.py::test_a PASSED*",
-            "*test_sort.py::test_r PASSED*",
-            "*test_sort.py::test_s PASSED*",
-            "*test_sort.py::test_x PASSED*",
-            "*test_sort.py::test_y PASSED*",
-            "*test_sort.py::test_z PASSED*",
+            "*test_sort.py::test_1 PASSED*",
+            "*test_sort.py::test_2 PASSED*",
+            "*test_sort.py::test_3 PASSED*",
+            "*test_sort.py::test_4 PASSED*",
+            "*test_sort.py::test_5 PASSED*",
+            "*test_sort.py::test_6 PASSED*",
         ]
     )
 
@@ -39,12 +39,12 @@ def test_sort_desc(pytester, examples):
     )
     result.stdout.fnmatch_lines(
         [
-            "*test_sort.py::test_z PASSED*",
-            "*test_sort.py::test_y PASSED*",
-            "*test_sort.py::test_x PASSED*",
-            "*test_sort.py::test_s PASSED*",
-            "*test_sort.py::test_r PASSED*",
-            "*test_sort.py::test_a PASSED*",
+            "*test_sort.py::test_6 PASSED*",
+            "*test_sort.py::test_5 PASSED*",
+            "*test_sort.py::test_4 PASSED*",
+            "*test_sort.py::test_3 PASSED*",
+            "*test_sort.py::test_2 PASSED*",
+            "*test_sort.py::test_1 PASSED*",
         ]
     )
     result.assert_outcomes(passed=6)
