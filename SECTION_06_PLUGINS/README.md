@@ -1,6 +1,6 @@
-# pytest-sort
+# Make a plugin called pytest-sort
 
-We will use the plugin/conftest file of 'sort_by_testname1 as our plugin. It has a CLI flag of --desc to reverse the order.
+We will use the plugin/conftest file of 'sort_by_testname' as our plugin. It has a CLI flag of --desc to reverse the order.
 
 Out plugin will have the name pytest-sort as PyPi etc prefers '-' to '_'.
 
