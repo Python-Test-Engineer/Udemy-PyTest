@@ -28,5 +28,5 @@ def pytest_collection_modifyitems(items, config):
         items.sort(key=lambda item: item.nodeid.split("::")[-1], reverse=True)
         print(f"\n\n===> DESC:")
     if config.option.asc:
-        items.sort(key=lambda item: item.nodeid.split("::")[-1], reverse=True)
+        items.sort(key=lambda item: item.nodeid.split("::")[-1])
         print(f"\n\n===> ASC:")
