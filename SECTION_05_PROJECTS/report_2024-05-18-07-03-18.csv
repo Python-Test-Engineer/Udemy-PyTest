@@ -1,4 +1,0 @@
-test_interface_simple|tests/tests_02_add_custom_markers/test_add_custom_markers.py::test_interface_simple|-PASSED-|0.00010939998901449144|simple_marker
-test_interface_complex|tests/tests_02_add_custom_markers/test_add_custom_markers.py::test_interface_complex|-PASSED-|8.689999231137335e-05|complex_marker
-test_event_simple|tests/tests_02_add_custom_markers/test_add_custom_markers.py::test_event_simple|-PASSED-|0.00015969999367371202|simple_marker
-test_something_else|tests/tests_02_add_custom_markers/test_add_custom_markers.py::test_something_else|-PASSED-|0.00012879999121651053|

@@ -13,19 +13,19 @@ def test_fn_example1_pass():
 
 
 @pytest.mark.expensive
-def test_fn_example2_pass_expensive():
+def test_fn_02_pass_expensive():
     """Docstring 2"""
     # print("\n\ntest_example2_pass\n")
     assert True
 
 
-def test_fn_example3_pass():
+def test_fn_03_pass():
     """Docstring 3"""
     assert True
 
 
 @pytest.mark.expensive
-def test_fn_example4_pass_expensive():
+def test_fn_04_pass_expensive():
     """Docstring 2"""
     # print("\n\ntest_example2_pass\n")
     assert True

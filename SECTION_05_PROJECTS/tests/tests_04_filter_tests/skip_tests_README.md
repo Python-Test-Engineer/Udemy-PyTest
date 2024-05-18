@@ -1,7 +1,5 @@
 # Filtering selection of tests
 
-We have seen how we can collect all the tests and able to sort the sequence order.
-
 We can also filter tests based on custom criteria.
 
 We use the nodeid to see if the test name has 'expensive' in it,(see tes_functions.py) or if it already has an 'expensive' marker.

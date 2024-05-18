@@ -41,12 +41,9 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
             # e.g tests/tests_ex01_make_report/test_class.py::TestApp::test_class_01_marked_last
             # I prefer a pipe delimed CSV '|' as it is easier to read and avoid conflicts with any other delimiters
 
-            with open(
-                FILENAME, "a"
-            ) as f:  # we need 'a' as it adds each item an 'w' would overwrite
+            with open(f"reports/{FILENAME}", "a") as f:
                 f.write(
                     f"{item.name}|{test_id}|{test_outcome}|{test_duration}|{all_markers}\n"
                 )
-
         except Exception as e:
             print("\nERROR:", e)

@@ -37,31 +37,22 @@ def pytest_collection_modifyitems(items, config):
     items[:] = first_tests + remaining_tests + last_tests
 
 
-# @pytest.hookimpl(hookwrapper=True)
-# def pytest_runtest_makereport(item: Item, call: CallInfo):
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item: Item, call: CallInfo):
 
-#     outcome = yield  # Run all other pytest_runtest_makereport non wrapped hooks
+    outcome = yield  # Run all other pytest_runtest_makereport non wrapped hooks
 
-#     if call.when == "call":
-#         outcome = call.excinfo
-#         try:
-#             # Access the test outcome (passed, failed, etc.)
-#             test_outcome = "^!!!FAILED!!!^" if outcome else "-PASSED-"
-#             # Access the test duration
-#             test_duration = call.duration
-#             # Access the test ID (nodeid)
-#             test_id = item.nodeid
+    if call.when == "call":
+        outcome = call.excinfo
+        try:
+            list_markers = [
+                str(getattr(item.own_markers[j], "name"))
+                for j in range(len(item.own_markers))
+            ]
+            all_markers = ("-").join(list_markers)
 
-#             list_markers = [
-#                 str(getattr(item.own_markers[j], "name"))
-#                 for j in range(len(item.own_markers))
-#             ]
-#             all_markers = ("-").join(list_markers)
+            with open(FILENAME, "a") as f:  # we need 'a' as it adds each item
+                f.write(f"{item.name}|{all_markers}\n")
 
-#             with open(FILENAME, "a") as f:  # we need 'a' as it adds each item
-#                 f.write(
-#                     f"{item.name}|{test_id}|{test_outcome}|{test_duration}|{all_markers}\n"
-#                 )
-
-#         except Exception as e:
-#             print("\nERROR:", e)
+        except Exception as e:
+            print("\nERROR:", e)

@@ -4,7 +4,6 @@ import pytest
 @pytest.mark.last
 def test_fn_01_marked_last():
     """Docstring 1"""
-    print("\n\nRunning test01\n")
     assert True
 
 

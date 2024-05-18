@@ -21,18 +21,7 @@ def pytest_collection_modifyitems(items, config):
         all_keywords = [str(x) for x in test.keywords]
         all_keywords = (" - ").join(all_keywords)
         output = f"\nKeywords: {all_keywords}"
-
-        print(
-            boxen(
-                output,
-                title=f"[blue]Keywords for {test.nodeid}[/]",
-                subtitle="",
-                subtitle_alignment="left",
-                color="green",
-                padding=1,
-            )
-        )
-
+        # print(output)
         # keyword order is
         # test name - markers - module name - folder - parent folder/grandparent folder - root folder
         # expensive in test name
