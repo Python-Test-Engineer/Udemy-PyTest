@@ -19,7 +19,12 @@ def pytest_collection_modifyitems(items):
 
         print(f"KEYWORDS: {all_keywords}")
         # we can produce a --collect-only type of report of all test that we are going to run
-
+        list_markers = [
+            str(getattr(test.own_markers[j], "name"))
+            for j in range(len(test.own_markers))
+        ]
+        all_markers = ("-").join(list_markers)
+        print(f"MARKERS: {all_markers}")
         with open(f"reports/{FILENAME}", "a") as f:
             f.write(f"{test.name}|{all_keywords}\n")
 
