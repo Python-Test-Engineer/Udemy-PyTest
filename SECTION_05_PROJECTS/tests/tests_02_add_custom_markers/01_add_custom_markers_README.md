@@ -5,7 +5,7 @@
 
 ## What we are doing in this project:
 
-- Based on the test name, we determin if it contains 'simple' or complex.
+- Based on the test name, we determine if it contains 'simple' or complex.
 - We then add markers dynamically called 'simple-marker' or 'complex-marker'
 - for just these ones.
 - This is a simple example but we might have a far more complex selection requirement that spans many folders etc.
