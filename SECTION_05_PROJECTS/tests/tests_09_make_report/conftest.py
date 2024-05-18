@@ -50,18 +50,19 @@ def pytest_report_teststatus(report):
                 "XPASS",
             )
     # print(f"\nletter: {letter} \n{report.nodeid}\nodeid")
-    output = f"letter: {letter} \n{report.nodeid}\nodeid"
+    output = f"{report.nodeid}\nletter: {letter}"
     print("\n")
     print(
         boxen(
             output,
-            title="[blue]X-FAIL tests[/]",
+            title="[blue]test_status[/]",
             subtitle="pytest_report_header",
             subtitle_alignment="left",
             color="green",
             padding=1,
         )
     )
+    print("\n")
     return report.outcome, letter, report.outcome.upper()
 
 
