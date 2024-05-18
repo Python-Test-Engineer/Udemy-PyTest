@@ -40,7 +40,7 @@ def pytest_report_teststatus(report):
         if report.skipped:
             return (
                 "xfailed",
-                "XFAILED",
+                "SKIPED_XFAILED",
                 "xfail",
             )
         if report.passed:
@@ -121,7 +121,7 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
             #     outcome = "X-FAILED"
             # test passed but was expected to fail
             if "xfail" in all_markers and outcome is not None:
-                outcome = "X-FAILEDD"
+                outcome = "X-FAILED"
 
             print(f"\n--->outcome is: {outcome}")
             print("-----------------------------------------------------")

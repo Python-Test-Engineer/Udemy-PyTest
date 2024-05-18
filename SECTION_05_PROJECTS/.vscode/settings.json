@@ -5,6 +5,7 @@
    "editor.renderWhitespace": "selection",
    "editor.insertSpaces": true,
    "editor.tabSize": 4,
+   "editor.tabCompletion": "on",
    "editor.wordWrap": "on",
    "workbench.tree.indent": 20,
    "editor.wordWrapColumn": 120,
@@ -19,7 +20,6 @@
    "editor.rulers": [
       100
    ],
-   "editor.tabCompletion": "on",
    "workbench.startupEditor": "none",
    "html.format.templating": true,
    "workbench.iconTheme": "vscode-icons",
