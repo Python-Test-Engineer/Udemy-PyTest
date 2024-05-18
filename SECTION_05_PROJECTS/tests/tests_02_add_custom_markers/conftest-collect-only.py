@@ -48,5 +48,4 @@ def pytest_collection_modifyitems(items):
         )
         # we can produce a --collect-only type of report of all test that we are going to run
         with open("collect_tests.txt", "a") as f:
-
             f.write(f"{test.name}|{all_keywords}\n")
