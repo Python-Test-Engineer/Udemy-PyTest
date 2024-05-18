@@ -31,7 +31,7 @@ def pytest_collection_modifyitems(items):
     print("\n")
     for test in items:
         all_keywords = [str(x) for x in test.keywords]
-        all_keywords = ("|").join(all_keywords)
+        all_keywords = (" - ").join(all_keywords)
 
         output = f"Test: {test.nodeid} \nKeywords: {all_keywords}"
         # keyword order is
@@ -46,7 +46,3 @@ def pytest_collection_modifyitems(items):
                 padding=1,
             )
         )
-        # we can produce a --collect-only type of report of all test that we are going to run
-        with open("collect_tests.txt", "a") as f:
-
-            f.write(f"{test.name}|{all_keywords}\n")
