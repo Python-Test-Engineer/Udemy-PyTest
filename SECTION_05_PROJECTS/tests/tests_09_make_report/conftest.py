@@ -115,11 +115,13 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
             # if outcome is None then test passed - assertion passed so no event raised = outcome
             if outcome is None:
                 outcome = "PASSED"
-            if "xfail" in all_markers and outcome is None:
-                outcome = "X-FAILED"
+            else:
+                outcome = "FAILED"
+            # if "xfail" in all_markers and outcome is None:
+            #     outcome = "X-FAILED"
             # test passed but was expected to fail
             if "xfail" in all_markers and outcome is not None:
-                outcome = "X-PASSED"
+                outcome = "X-FAILEDD"
 
             print(f"\n--->outcome is: {outcome}")
             print("-----------------------------------------------------")
