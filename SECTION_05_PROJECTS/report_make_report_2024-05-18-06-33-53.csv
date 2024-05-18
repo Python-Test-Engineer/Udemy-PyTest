@@ -1,0 +1,5 @@
+test_fn_example1_pass|tests/tests_09_make_report/test_functions.py::test_fn_example1_pass|PASSED|0.0007092999876476824|sanity-outer
+test_fn_example2_pass|tests/tests_09_make_report/test_functions.py::test_fn_example2_pass|PASSED|0.0003263000107835978|inner-sanity
+test_fn_example3_xfail|tests/tests_09_make_report/test_functions.py::test_fn_example3_xfail|<ExceptionInfo AssertionError('assert False') tblen=28>|0.0003871000080835074|inner-xfail-setup
+test_fn_example4_fail|tests/tests_09_make_report/test_functions.py::test_fn_example4_fail|<ExceptionInfo AssertionError('assert False') tblen=28>|0.00038380001205950975|
+test_fn_example6_xfail_passes|tests/tests_09_make_report/test_functions.py::test_fn_example6_xfail_passes|PASSED|0.0003294000052846968|xfail

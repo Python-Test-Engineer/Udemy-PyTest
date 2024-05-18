@@ -1,6 +1,5 @@
 import pytest
 from datetime import datetime
-from pyboxen import boxen
 
 # interesing note - the main source code to see how PyTest works is in the dunder folders...
 from _pytest.nodes import Item
@@ -19,50 +18,6 @@ FILENAME = f"report_make_report_{report_date}.csv"
 print("\n\n")
 
 # this hook will become a standard ouput report for other projects and will not be included in the project but in the root folder as a common hook.
-
-
-def pytest_report_teststatus(report):
-
-    if report.passed:
-        letter = "PASSED"
-    elif report.skipped:
-        letter = "SKIPPED"
-    elif report.failed:
-        letter = "FAILED"
-        if report.when != "call":
-            letter = "FAILED_NOT_CALLED"
-    elif report.outcome == "rerun":
-        letter = "RERUN"
-    else:
-        letter = "UNKNOWN"
-
-    if hasattr(report, "wasxfail"):
-        if report.skipped:
-            return (
-                "xfailed",
-                "XFAILED",
-                "xfail",
-            )
-        if report.passed:
-            return (
-                "xpassed",
-                "XPASSED",
-                "XPASS",
-            )
-    # print(f"\nletter: {letter} \n{report.nodeid}\nodeid")
-    output = f"letter: {letter} \n{report.nodeid}\nodeid"
-    print("\n")
-    print(
-        boxen(
-            output,
-            title="[blue]X-FAIL tests[/]",
-            subtitle="pytest_report_header",
-            subtitle_alignment="left",
-            color="green",
-            padding=1,
-        )
-    )
-    return report.outcome, letter, report.outcome.upper()
 
 
 @pytest.hookimpl(hookwrapper=True)
@@ -86,7 +41,7 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
 
         try:
             # Access the test outcome (passed, failed, etc.)
-
+            test_outcome = "^!!!FAILED!!!^" if outcome else "-PASSED-"
             # Access the test duration
             test_duration = call.duration
             # Access the test ID (nodeid)
@@ -100,7 +55,6 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
                 for j in range(len(item.own_markers))
             ]
             all_markers = ("-").join(list_markers)
-            print(all_markers)
 
             # we can customise the format and what we ouput to the file
             # test_id is the item.node.id and is full path to the test that we would use in CLI
@@ -110,19 +64,9 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
             # we need 'a' as it adds each item an 'w' would overwrite
             # we can log directly to a DB.
             # the output format can be customised - I use '|' (pipe) as it is easier to read
-
-            # if outcome is None then test passed - assertion passed so no event raised = outcome
-            if outcome is None:
-                outcome = "PASSED"
-            if "xfail" in all_markers and outcome is None:
-                outcome = "X-FAILED"
-            # test passed but was expected to fail
-            if "xfail" in all_markers and outcome is not None:
-                outcome = "X-PASSED"
-
             with open(FILENAME, "a") as f:
                 f.write(
-                    f"{item.name}|{test_id}|{outcome}|{test_duration}|{all_markers}\n"
+                    f"{item.name}|{test_id}|{test_outcome}|{test_duration}|{all_markers}\n"
                 )
 
         except Exception as e:
