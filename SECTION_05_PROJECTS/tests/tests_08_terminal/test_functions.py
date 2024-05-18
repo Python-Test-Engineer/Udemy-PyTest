@@ -12,8 +12,8 @@ def test_fn_example_xpass():
     assert True
 
 
-@pytest.mark.skip
-def test_fn_example2_pass():
+@pytest.mark.skip(reason="no way of currently testing this")
+def test_fn_example2_skip():
     """Docstring 2"""
     assert True
 
