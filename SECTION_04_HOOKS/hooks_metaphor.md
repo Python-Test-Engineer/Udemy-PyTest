@@ -23,7 +23,7 @@ You can register a HOOK for them.
 
 You tell them:
 
-You can csend the request at any time and when I reach one of my hook points, I will look at the list of requests and find those with the same HOOK_SPEC I am currently in, MID_MORNING, LUNCH or MID_AFTERNOON and look at the HOOK_IMPL.
+You can send the request at any time and when I reach one of my hook points, I will look at the list of requests and find those with the same HOOK_SPEC I am currently in, MID_MORNING, LUNCH or MID_AFTERNOON and look at the HOOK_IMPL.
 
 If there are some HOOK_IMPL that have correct signature of function and arguments I will do them.
 
