@@ -121,6 +121,8 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
             if "xfail" in all_markers and outcome is not None:
                 outcome = "X-PASSED"
 
+            print(f"\n--->outcome is: {outcome}")
+            print("-----------------------------------------------------")
             with open(FILENAME, "a") as f:
                 f.write(
                     f"{item.name}|{test_id}|{outcome}|{test_duration}|{all_markers}\n"
