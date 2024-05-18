@@ -1,0 +1,6 @@
+test_class_01_marked_last|tests/tests_01_make_report/test_class.py::TestApp::test_class_01_marked_last|-PASSED-|0.000142400007462129|last
+test_class_02_marked_first|tests/tests_01_make_report/test_class.py::TestApp::test_class_02_marked_first|-PASSED-|8.72999953571707e-05|first
+test_class_03_not_first_or_last|tests/tests_01_make_report/test_class.py::TestApp::test_class_03_not_first_or_last|-PASSED-|0.00016080000204965472|
+test_fn_example1_pass|tests/tests_01_make_report/test_functions.py::test_fn_example1_pass|-PASSED-|0.0006409000197891146|sanity-outer
+test_fn_example2_pass|tests/tests_01_make_report/test_functions.py::test_fn_example2_pass|-PASSED-|0.0007921000069472939|inner-sanity
+test_fn_example3_xfail|tests/tests_01_make_report/test_functions.py::test_fn_example3_xfail|^!!!FAILED!!!^|0.0007684000011067837|inner-xfail-setup
