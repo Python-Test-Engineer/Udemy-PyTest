@@ -9,11 +9,6 @@ from rich.console import Console
 
 console = Console()
 
-
-# https://rich.readthedocs.io/en/stable/appendix/colors.html
-
-# Let's define our failures.txt as a constant as we will need it later
-
 rnd = random.randint(100_000, 999_999)
 report_date = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 FILENAME = f"report_store_hook_results_{report_date}.csv"
@@ -40,7 +35,7 @@ def pytest_runtest_teardown(item: pytest.Item) -> None:
 def pytest_runtest_makereport(item: Item, call: CallInfo):
 
     outcome = yield  # Run all other pytest_runtest_makereport non wrapped hooks
-    report = outcome.get_result()
+    # report = outcome.get_result()
 
     if call.when == "call":
         outcome = call.excinfo
