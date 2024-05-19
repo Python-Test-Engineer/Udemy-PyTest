@@ -20,52 +20,6 @@ print("\n\n")
 
 # this hook will become a standard ouput report for other projects and will not be included in the project but in the root folder as a common hook.
 
-
-# def pytest_report_teststatus(report):
-
-#     if report.passed:
-#         letter = "PASSED"
-#     elif report.skipped:
-#         letter = "SKIPPED"
-#     elif report.failed:
-#         letter = "FAILED"
-#         if report.when != "call":
-#             letter = "FAILED_NOT_CALLED"
-#     elif report.outcome == "rerun":
-#         letter = "RERUN"
-#     else:
-#         letter = "UNKNOWN"
-
-#     if hasattr(report, "wasxfail"):
-#         if report.skipped:
-#             return (
-#                 "xfailed",
-#                 "SKIPED_XFAILED",
-#                 "xfail",
-#             )
-#         if report.passed:
-#             return (
-#                 "xpassed",
-#                 "XPASSED",
-#                 "XPASS",
-#             )
-#     # print(f"\nletter: {letter} \n{report.nodeid}\nodeid")
-#     output = f"{report.nodeid}\nletter: {letter}"
-#     print("\n")
-#     print(
-#         boxen(
-#             output,
-#             title="[blue]test_status[/]",
-#             subtitle="pytest_report_header",
-#             subtitle_alignment="left",
-#             color="green",
-#             padding=1,
-#         )
-#     )
-#     print("\n")
-#     return report.outcome, letter, report.outcome.upper()
-
-
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item: Item, call: CallInfo):
     # item is actual a test.
