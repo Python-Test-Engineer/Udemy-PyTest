@@ -1,4 +1,0 @@
-test_01_pass|PASSED|8.819997310638428e-05|
-test_02_xfail|X-FAILED PASSED|0.0002601000014692545|xfail
-test_03_fail|<ExceptionInfo AssertionError('assert False') tblen=28>|0.00026729999808594584|
-test_05_xfail_passes|X-PASSED|6.960000609979033e-05|xfail
