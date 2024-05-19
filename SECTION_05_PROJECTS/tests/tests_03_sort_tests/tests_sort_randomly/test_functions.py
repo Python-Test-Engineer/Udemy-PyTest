@@ -5,7 +5,6 @@ import pytest
 @pytest.mark.sanity
 def test_fn_03():
     """Docstring 1"""
-    print("\n\nRunning test03\n")
     assert True
 
 
@@ -13,7 +12,6 @@ def test_fn_03():
 @pytest.mark.inner
 def test_fn_04():
     """Docstring 2"""
-    print("\n\nRunning test_04\n")
     assert True
 
 
@@ -22,5 +20,4 @@ def test_fn_04():
 @pytest.mark.inner
 def test_fn_05():
     """Docstring 3"""
-    print("n\nRunning test_05\n")
     assert False

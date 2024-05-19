@@ -19,7 +19,7 @@ This will be useful later on when we want to sort, filter, randomise tests by al
 
 ## 03
 
-### Objective: Sorting, filtering and randomizing tests
+### Objective: Sorting, grouping  and randomizing tests
 
 We will learn how to sort tests by test name, use a first and last markers to run the tests first->others->last.
 

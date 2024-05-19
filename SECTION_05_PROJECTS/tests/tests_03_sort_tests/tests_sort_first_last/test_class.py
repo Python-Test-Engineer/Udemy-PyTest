@@ -13,6 +13,6 @@ class TestApp:
 
         assert True
 
-    def test_class_03_not_first_or_last(self):
+    def test_class_03_not_marked_first_or_last(self):
 
         assert True
