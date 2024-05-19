@@ -42,12 +42,11 @@ def test_fn_example4_fail():
 @pytest.mark.skip
 def test_fn_example5_skipped():
     """Docstring 3"""
-    print("n\nRunning test_example5_skippedl\n")
+    print("n\nRunning test_example5_skipped\n")
     assert False
 
 
 @pytest.mark.xfail
 def test_fn_example6_xfail_passes():
     """Docstring 3"""
-    print("n\nRunning test_example6__xfail_passes\n")
     assert True

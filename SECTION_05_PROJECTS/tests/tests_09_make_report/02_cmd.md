@@ -1,5 +1,6 @@
 python -m pytest -vs --tb=no .\tests\tests_01_make_report\
 
+python -m pytest -vs .\tests\tests_09_make_report\test_functions.py::test_fn_example6_xfail_passes --tb=no
 
 --tb=no supresses output if there is an error
 
