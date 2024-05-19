@@ -1,4 +1,6 @@
 
+https://docs.pytest.org/en/7.4.x/how-to/parametrize.html
+
 ## Passing test
 
 `python -m pytest -s --stringinput="hello" --stringinput="world" .\tests\tests_05_generate_param_data\ex02_cli_options\`

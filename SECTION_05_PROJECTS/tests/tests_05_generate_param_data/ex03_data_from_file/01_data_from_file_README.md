@@ -25,6 +25,7 @@ def test_read_from_file(initial_value):
 
 
 We can change source of data to reading a CSV file or geting data from the database.
+```
+ python -m pytest -s .\tests\tests_05_generate_param_data\ex03_data_from_file\ --input_file=.\tests\tests_05_generate_param_data\ex03_data_from_file\data\data.txt
 
- `python -m pytest -s .\tests\tests_05_generate_param_data\ex03_data_from_file\ --input_file=.\tests\tests_05_generate_param_data\ex03_data_from_file\data\data.txt`
-
+```

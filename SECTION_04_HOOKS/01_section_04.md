@@ -1,16 +1,16 @@
 pytest --debug gives output of hooks
 
-![Examples](./images/hook-tree.png "PyTest Hooks")
+![Examples](./images/02-hook-tree.png "PyTest Hooks")
 
 Some hooks are wrap@pytest.hookimpl(hookwrapper=True) as they wrap other hooks.
 
-![Examples](./images/hook-tree-with-wrappers.png "PyTest Hooks")
+![Examples](./images/03-hook-tree-with-wrappers.png "PyTest Hooks")
 
 I have made a Markdown file of this tree in hook_tree_in_markdown.md
 
 When PyTest runs certain functions, it looks for similar named function with *similar arguments*. If there is a match it will then run our function at the same point in the run:
 
-![Examples](./images/hooks-docs.png "PyTest Hooks")
+![Examples](./images/04-hooks-docs.png "PyTest Hooks")
 
 These are hooks.
 
