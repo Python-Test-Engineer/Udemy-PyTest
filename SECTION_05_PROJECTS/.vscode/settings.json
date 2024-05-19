@@ -10,7 +10,10 @@
    "workbench.sideBar.location": "right",
    "editor.autoClosingBrackets": "always",
    "workbench.tree.indent": 20,
-   "editor.wordWrapColumn": 120,
+   "editor.wordWrapColumn": 89,
+   "editor.rulers": [
+      89
+   ],
    "editor.fontSize": 22,
    "editor.fontWeight": 500,
    "editor.fontFamily": "Consolas",
@@ -19,9 +22,6 @@
    "editor.minimap.renderCharacters": false,
    "editor.minimap.showSlider": "always",
    "editor.multiCursorModifier": "ctrlCmd",
-   "editor.rulers": [
-      80
-   ],
    "workbench.startupEditor": "none",
    "html.format.templating": true,
    "workbench.iconTheme": "vscode-icons",
