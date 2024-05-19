@@ -1,6 +1,13 @@
 
-# Ordering our tests by markers first, all non-last, then last.
+# Ordering our tests by markers first, all others, then last.
 
+## pytest.ini and markers
+
+If we do not register our markers in pytest.ini then we will get a warning provided the --strict-only option is not set.
+
+If it is, then we will get an error.
+
+Lets see this in action...
 We have five functions test_fn_01, test_fn_02 etc listed in that order.
 
 They have markers of 'first', 'last' or none of these.
@@ -17,6 +24,6 @@ groupA
 groupB
 groupC
 ```
-and then fultering tests into their appropriate lists `groupA_list` etc
+and then filtering tests into their appropriate lists `groupA_list` etc
 
 We dynamcially add two markers `first` and `last` based on criteria of keywords as we saw in a previous lesson.

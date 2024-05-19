@@ -9,10 +9,10 @@ FILENAME = f"report_sort_first_last{report_date}.csv"
 print("\n\n")
 
 
-def pytest_configure(config):
-    # we need to add these markers to avoid error if strict-markers is used.
-    config.addinivalue_line("markers", "first: run these tests first")
-    config.addinivalue_line("markers", "last: run these tests last")
+# def pytest_configure(config):
+# # we need to add these markers to avoid error if strict-markers is used.
+# config.addinivalue_line("markers", "first: run these tests first")
+# config.addinivalue_line("markers", "last: run these tests last")
 
 
 # A pytest hook to for modifying collected items
