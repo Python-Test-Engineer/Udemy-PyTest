@@ -75,6 +75,8 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
                     outcome = "X-FAILED PASSED"
                 elif outcome is None:
                     outcome = "PASSED"
+                elif outcome is not None:
+                    outcome = "FAILED"
                 else:
                     outcome = outcome
                 f.write(
