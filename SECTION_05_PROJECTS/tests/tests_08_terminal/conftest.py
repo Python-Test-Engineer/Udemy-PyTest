@@ -9,6 +9,11 @@ from rich.console import Console
 console = Console()
 
 
+def pytest_configure(config):
+
+    config.my_global_value = "✅ MY GLOBLAL VALUE ✅"
+
+
 # report is report for a single test
 @pytest.hookimpl
 def pytest_report_teststatus(report, config):
@@ -46,8 +51,7 @@ def pytest_report_header(config):
             )
         )
         return [
-            f"\n📝 This is in a hook with a random number {random.randint(10000, 99999)}",
-            "🙋 pytest_report_header data\n",
+            f"\n📝 This is in a pytest_report_header hook and it can access the config built in fixture: {config.my_global_value}"
         ]
 
 
@@ -60,32 +64,56 @@ def pytest_runtest_call(item):
 def pytest_terminal_summary(terminalreporter, exitstatus, config):
     reports = terminalreporter.getreports("")
     # this holds record_property custom data
-    output = [report.user_properties for report in reports]
-    output2 = [report.sections for report in reports]
+    # output = [report.user_properties for report in reports]
+    # output2 = [report.sections for report in reports]
 
     content = os.linesep.join(
         f"{key}: {value}" for report in reports for key, value in report.user_properties
     )
-
-    # content = ("").join(str(output + output2))
 
     if content:
         # https://docs.pytest.org/en/7.1.x/reference/reference.html?highlight=record_property#std-fixture-record_property
         terminalreporter.ensure_newline()
         terminalreporter.section("record_property", sep="-", red=True, bold=True)
         terminalreporter.line(content)
-
+        print("\n")
         terminalreporter.ensure_newline()
         terminalreporter.section(
-            "Tests took place in", sep="=", blue=True, bold=True, fullwidth=None
+            f"Our custom test results section with exit status: {exitstatus}",
+            sep="=",
+            blue=True,
+            bold=True,
+            fullwidth=None,
         )
-        # print(f"\nROOTDIR: {config.rootdir}\n")
+
         print("\n")
-        output = f"\n✅ ROOTDIR: {config.rootdir} 🆗\n"
+        passed_tests = len(terminalreporter.stats.get("passed", ""))
+        failed_tests = len(terminalreporter.stats.get("failed", ""))
+        skipped_tests = len(terminalreporter.stats.get("skipped", ""))
+        error_tests = len(terminalreporter.stats.get("error", ""))
+        xfailed_tests = len(terminalreporter.stats.get("xfailed", ""))
+        xpassed_tests = len(terminalreporter.stats.get("xpassed", ""))
+
+        total_tests = (
+            passed_tests
+            + failed_tests
+            + skipped_tests
+            + error_tests
+            + xfailed_tests
+            + xpassed_tests
+        )
+
+        output = f"Total tests: {total_tests}\n"
+        output += f"Passed: {passed_tests}\n"
+        output += f"Failed: {failed_tests}\n"
+        output += f"Skipped: {skipped_tests}\n"
+        output += f"Error: {error_tests}\n"
+        output += f"xfailed: {xfailed_tests}\n"
+        output += f"xpassed: {xpassed_tests}\n"
         print(
             boxen(
                 output,
-                title="[blue]Tests were in directory:[/]",
+                title="[blue]Test results:[/]",
                 subtitle="END OF DEMO",
                 subtitle_alignment="left",
                 color="green",
