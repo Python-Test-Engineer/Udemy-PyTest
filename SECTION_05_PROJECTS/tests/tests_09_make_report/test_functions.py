@@ -11,7 +11,7 @@ def test_01_pass():
 
 
 @pytest.mark.xfail  # built in marker so no need to register in pytest.ini
-def test_02_xfail():
+def test_02_xfail_fails():
     """Docstring 3"""
     assert False
 
