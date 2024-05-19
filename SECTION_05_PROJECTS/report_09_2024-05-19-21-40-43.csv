@@ -1,7 +1,0 @@
-test_class_01_marked_last|tests/tests_09_make_report/test_class.py::TestApp::test_class_01_marked_last|None|9.629997657611966e-05|last
-test_class_02_marked_first|tests/tests_09_make_report/test_class.py::TestApp::test_class_02_marked_first|None|0.0001094000181183219|first
-test_class_03_not_first_or_last|tests/tests_09_make_report/test_class.py::TestApp::test_class_03_not_first_or_last|None|8.93000396899879e-05|
-test_fn_example1_pass|tests/tests_09_make_report/test_functions.py::test_fn_example1_pass|None|0.00061039999127388|sanity-outer
-test_fn_example2_pass|tests/tests_09_make_report/test_functions.py::test_fn_example2_pass|None|0.0005165999755263329|inner-sanity
-test_fn_example4_fail|tests/tests_09_make_report/test_functions.py::test_fn_example4_fail|<ExceptionInfo AssertionError('assert False') tblen=28>|0.000437400012742728|
-test_fn_example6_xfail_passes|tests/tests_09_make_report/test_functions.py::test_fn_example6_xfail_passes|X-PASSED|6.450002547353506e-05|xfail

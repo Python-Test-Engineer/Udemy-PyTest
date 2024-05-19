@@ -113,12 +113,11 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
             # the output format can be customised - I use '|' (pipe) as it is easier to read
 
             # print(f"{item.name}|{test_id}|{outcome}|{test_duration}|{all_markers}")
-            print("-----------------------------------------------------")
             with open(FILENAME, "a") as f:
                 if "xfail" in all_markers and outcome is None:
                     outcome = "X-PASSED"
-                elif "xfail" in all_markers and "False" in outcome:
-                    outcome = "X-FAILED"
+                elif "xfail" in all_markers and outcome is not None:
+                    outcome = "X-FAILED PASSED"
                 elif outcome is None:
                     outcome = "PASSED"
                 else:

@@ -1,8 +1,0 @@
-test_class_01_marked_last|tests/tests_09_make_report/test_class.py::TestApp::test_class_01_marked_last|-PASSED-|0.00012539996532723308|last
-test_class_02_marked_first|tests/tests_09_make_report/test_class.py::TestApp::test_class_02_marked_first|-PASSED-|8.319999324157834e-05|first
-test_class_03_not_first_or_last|tests/tests_09_make_report/test_class.py::TestApp::test_class_03_not_first_or_last|-PASSED-|7.019995246082544e-05|
-test_fn_example1_pass|tests/tests_09_make_report/test_functions.py::test_fn_example1_pass|-PASSED-|0.00046690000453963876|sanity-outer
-test_fn_example2_pass|tests/tests_09_make_report/test_functions.py::test_fn_example2_pass|-PASSED-|0.0004813999985344708|inner-sanity
-test_fn_example3_xfail|tests/tests_09_make_report/test_functions.py::test_fn_example3_xfail|^!!!FAILED!!!^|0.0006353000062517822|inner-xfail-setup
-test_fn_example4_fail|tests/tests_09_make_report/test_functions.py::test_fn_example4_fail|^!!!FAILED!!!^|0.00045330001739785075|
-test_fn_example6_xfail_passes|tests/tests_09_make_report/test_functions.py::test_fn_example6_xfail_passes|-PASSED-|7.080001523718238e-05|xfail
