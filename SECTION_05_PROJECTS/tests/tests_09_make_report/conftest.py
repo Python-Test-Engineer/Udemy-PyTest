@@ -20,6 +20,7 @@ print("\n\n")
 
 # this hook will become a standard ouput report for other projects and will not be included in the project but in the root folder as a common hook.
 
+
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item: Item, call: CallInfo):
     # item is actual a test.
@@ -77,7 +78,8 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
                 else:
                     outcome = outcome
                 f.write(
-                    f"{item.name}|{test_id}|{outcome}|{test_duration}|{all_markers}\n"
+                    # f"{item.name}|{test_id}|{outcome}|{test_duration}|{all_markers}\n"
+                    f"{item.name}|{outcome}|{all_markers}\n"
                 )
 
         except Exception as e:

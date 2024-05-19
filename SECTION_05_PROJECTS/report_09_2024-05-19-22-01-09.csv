@@ -1,4 +1,0 @@
-test_01_pass|tests/tests_09_make_report/test_functions.py::test_01_pass|PASSED|9.049999061971903e-05|
-test_02_xfail|tests/tests_09_make_report/test_functions.py::test_02_xfail|X-FAILED|0.00013719999697059393|xfail
-test_03_fail|tests/tests_09_make_report/test_functions.py::test_03_fail|<ExceptionInfo AssertionError('assert False') tblen=28>|0.000298400002066046|
-test_05_xfail_passes|tests/tests_09_make_report/test_functions.py::test_05_xfail_passes|X-PASSED|7.579999510198832e-05|xfail
