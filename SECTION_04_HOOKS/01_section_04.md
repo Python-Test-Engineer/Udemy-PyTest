@@ -1,4 +1,4 @@
-pytest --debug gives output of hooks
+`python -m pytest -vs --debug` gives output of hooks
 
 ![Examples](./images/02-hook-tree.png "PyTest Hooks")
 
