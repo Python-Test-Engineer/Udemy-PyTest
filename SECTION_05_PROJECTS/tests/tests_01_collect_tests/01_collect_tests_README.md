@@ -9,3 +9,5 @@ pytest-collect-only-flag.png
 
 We can output this to a CSV along with infomation on keywords usedof the test.
 `python -m pytest .\tests\tests_collect_tests\`
+
+Use 09 to show that it does this in real time...
