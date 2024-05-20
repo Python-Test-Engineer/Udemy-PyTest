@@ -27,7 +27,7 @@ root
 │   ├── pytest_runtest_logstart
 │   ├── pytest_runtest_setup
 │   ├── ├── pytest_fixture_setup
-│   ├── pytest_runtest_makereport # wraps others via yield hence hookwrapper runs first
+│   ├── pytest_runtest_makereport # NB wraps others via yield hence hookwrapper runs first
 │   ├── ├──pytest_ignore_collect
 │   ├── pytest_runtest_logreport
 │   ├── ├── pytest_report_teststatus
