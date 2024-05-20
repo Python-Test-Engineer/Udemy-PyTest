@@ -1,0 +1,4 @@
+test_01_pass|PASSED|
+test_02_xfail_fails|X-FAILED PASSED|xfail
+test_03_fail|FAILED|
+test_05_xfail_passes|X-PASSED|xfail
