@@ -81,7 +81,7 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
                     outcome = outcome
                 f.write(
                     # f"{item.name}|{test_id}|{outcome}|{test_duration}|{all_markers}\n"
-                    f"{item.name}|{outcome}|{all_markers}\n"
+                    f"{item.name}|{outcome}|{test_duration}|{all_markers}\n"
                 )
 
         except Exception as e:
