@@ -1,0 +1,7 @@
+test_class_01_marked_last|PASSED|9.350001346319914e-05|last
+test_class_02_marked_first|PASSED|0.00015739991795271635|first
+test_class_03_not_marked_first_or_last|PASSED|7.349997758865356e-05|
+test_interface_simple|PASSED|0.00010090006981045008|expensive
+test_interface_complex|PASSED|8.169992361217737e-05|inner-outer
+test_event_simple|PASSED|7.469998672604561e-05|first
+test_something_else|PASSED|0.0001674999948590994|inner-first-outer

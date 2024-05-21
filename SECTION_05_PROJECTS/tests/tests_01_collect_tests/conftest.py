@@ -25,6 +25,7 @@ def pytest_collection_modifyitems(items):
         ]
         all_markers = ("-").join(list_markers)
         print(f"MARKERS: {all_markers}")
+        print("-------------------------------")
         with open(f"{FILENAME}", "a") as f:
             f.write(f"{test.name}|{all_keywords}\n")
 
