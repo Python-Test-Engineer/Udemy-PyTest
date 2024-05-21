@@ -18,7 +18,6 @@ def test_02_mark_expensive():
     assert True
 
 
-
 def test_03():
     """Docstring 3"""
     assert True
