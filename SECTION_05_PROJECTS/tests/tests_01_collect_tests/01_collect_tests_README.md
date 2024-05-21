@@ -1,5 +1,7 @@
 ## Creating a CSV of all tests that will be run
 
+Let's refresh markers, keywords and nodeid...
+
 If we run test with the --collect-only flag we get a list of all test that will be run:
 
 ![--collect-only flag](./pytest-collect-only-flag.png "San Juan Mountains")
