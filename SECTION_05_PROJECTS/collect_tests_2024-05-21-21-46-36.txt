@@ -1,4 +1,0 @@
-test_interface_simple|test_interface_simple|test_collect_tests.py|tests_01_collect_tests|tests|SECTION_05_PROJECTS|
-test_interface_complex|test_interface_complex|inner|outer|pytestmark|test_collect_tests.py|tests_01_collect_tests|tests|SECTION_05_PROJECTS|
-test_event_simple|test_event_simple|first|pytestmark|test_collect_tests.py|tests_01_collect_tests|tests|SECTION_05_PROJECTS|
-test_something_else|test_something_else|inner|first|outer|pytestmark|test_collect_tests.py|tests_01_collect_tests|tests|SECTION_05_PROJECTS|

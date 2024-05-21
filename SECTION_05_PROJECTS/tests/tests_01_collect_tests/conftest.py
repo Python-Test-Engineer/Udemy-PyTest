@@ -1,4 +1,3 @@
-import pytest
 from datetime import datetime
 
 # timestamp our ouput files
@@ -17,14 +16,14 @@ def pytest_collection_modifyitems(items):
         all_keywords = [str(x) for x in test.keywords]
         all_keywords = ("|").join(all_keywords)
 
-        print(f"KEYWORDS: {all_keywords}")
+        print(f"KEYWORDS: \n{all_keywords}\n")
         # we can produce a --collect-only type of report of all test that we are going to run
         list_markers = [
             str(getattr(test.own_markers[j], "name"))
             for j in range(len(test.own_markers))
         ]
         all_markers = ("-").join(list_markers)
-        print(f"MARKERS: {all_markers}")
+        print(f"MARKERS: \n{all_markers}")
         print("-------------------------------")
         with open(f"{FILENAME}", "a") as f:
             f.write(f"{test.name}|{all_keywords}\n")

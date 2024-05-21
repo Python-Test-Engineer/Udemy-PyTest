@@ -56,7 +56,7 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
                 for j in range(len(item.own_markers))
             ]
             all_markers = ("-").join(list_markers)
-            print(all_markers)
+            # print(all_markers)
 
             # we can customise the format and what we ouput to the file
             # test_id is the item.node.id and is full path to the test that we would use in CLI
