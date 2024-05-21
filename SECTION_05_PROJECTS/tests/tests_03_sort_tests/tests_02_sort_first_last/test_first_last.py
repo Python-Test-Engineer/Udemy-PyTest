@@ -31,7 +31,7 @@ def test_05_marked_first():
     assert True
 
 
-@pytest.mark.first
+
 def test_06_not_marked_first_or_last():
     """Docstring 3"""
 
