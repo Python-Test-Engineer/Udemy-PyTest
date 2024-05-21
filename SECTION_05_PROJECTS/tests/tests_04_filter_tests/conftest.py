@@ -1,5 +1,3 @@
-from pyboxen import boxen
-
 from rich.console import Console
 
 console = Console()
@@ -26,13 +24,7 @@ def pytest_collection_modifyitems(items, config):
         print(output)
         # keyword order is
         # test name - markers - module name - folder - parent folder/grandparent folder - root folder
-        # expensive in test name
-        if "expensive" in test.nodeid:
-            deselected.append(test)
-        # expensive in markers
-        # we could use -m flag in CLI to skip expensive tests but we might have more compled
-        # logic in test functions to skip tests and this may be useful
-        elif "custom_expensive_marker" in all_markers:
+        if "custom_expensive_marker" in all_markers:
             deselected.append(test)
         else:
             selected.append(test)
