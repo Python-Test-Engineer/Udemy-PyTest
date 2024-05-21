@@ -14,7 +14,7 @@
 
 `python -m pytest .\tests\tests_02_add_custom_markers\ --collect-only`
 
-![--collect-only flag](./pytest-collect-only-flag.png "San Juan Mountains")
+![--collect-only flag](./pytest-collect-only-flag.png "collect only")
 pytest-collect-only-flag.png 
 
 ## When might we want to add markers dynamically?
