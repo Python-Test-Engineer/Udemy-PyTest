@@ -1,10 +1,7 @@
 
-
-
-
 We can 'tag' tests with markers -  @pytest.mark.first
 
-We can filter tests using `python -m pytest -m 'first`
+We can filter tests using `python -m pytest -vs -m 'first`
 
 We can make more complex expressions - `python -m pytest -m 'inner or first`, `python -m pytest -m 'inner and first`
 
