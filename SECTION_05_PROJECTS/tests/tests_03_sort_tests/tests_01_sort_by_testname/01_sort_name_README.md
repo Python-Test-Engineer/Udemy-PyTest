@@ -22,3 +22,7 @@ We can then sort the list in any way we like and later we will see how we can se
 For now we will sort by tst name alphabetically and we will learn how to pass in CLI arguments by adding `--desc` and `--asc` boolean flags. 
 
 In fact, when we come to make our distributable plugin, we will use this local plugin or conftest.py as our plugin feature.
+
+Hook order:
+
+https://github.com/pytest-dev/pytest/discussions/11226
