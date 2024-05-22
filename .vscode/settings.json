@@ -18,7 +18,7 @@
    "editor.minimap.showSlider": "always",
    "editor.multiCursorModifier": "ctrlCmd",
    "editor.rulers": [
-      80
+      100
    ],
    "workbench.startupEditor": "none",
    "html.format.templating": true,
