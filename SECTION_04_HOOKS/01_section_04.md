@@ -1,3 +1,6 @@
+
+https://happytest-apidoc.readthedocs.io/en/stable/writing_plugins.html
+
 `python -m pytest -vs --debug` gives output of hooks
 
 ![Examples](./images/02-hook-tree.png "PyTest Hooks")
