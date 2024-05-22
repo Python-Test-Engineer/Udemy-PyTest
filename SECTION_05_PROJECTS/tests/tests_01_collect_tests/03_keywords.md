@@ -16,10 +16,11 @@ We will go through this code later but for now...
 
 When we run the above we see that we get where I have used the pipe operator '|' as the delimeter but this is still a CSV file. We will see how to customise this in one of our projects: see console and report
 
-KEYWORDS: test_something_else|inner|first|outer|pytestmark|test_collect_tests.py|tests_01_collect_tests|tests|SECTION_05_PROJECTS|
-testname makers filename folders->including root folder
+KEYWORDS: test_something_else | inner | first| outer| pytestmark | test_collect_tests.py|tests_01_collect_tests| tests | SECTION_05_PROJECTS |
 
-MARKERS: inner-first-outer
+items are: testname | makers| filename | folders->including root folder
+
+MARKERS: inner - first - outer
 
 We can thus order tests by any of these keywords if we want. We can split the node and get the chosen 'bit' and then do a sort based on that key.
 
