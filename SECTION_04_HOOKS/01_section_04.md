@@ -7,13 +7,11 @@ https://happytest-apidoc.readthedocs.io/en/stable/writing_plugins.html
 
 Some hooks are wrap @pytest.hookimpl(hookwrapper=True) as they wrap other hooks (see article at top)
 
-![Examples](./images/03-hook-tree-with-wrappers.png "PyTest Hooks")
-
 I have made a Markdown file of this tree in hook_tree_in_markdown.md
 
 When PyTest runs certain functions, it looks for similar named function with *similar arguments*. If there is a match it will then run our function at the same point in the run:
 
-![Examples](./images/04-hooks-docs.png "PyTest Hooks")
+![Examples](./images/01-hooks-docs.png "PyTest Hooks")
 
 These are hooks.
 
