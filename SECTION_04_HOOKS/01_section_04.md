@@ -5,7 +5,7 @@ https://happytest-apidoc.readthedocs.io/en/stable/writing_plugins.html
 
 ![Examples](./images/02-hook-tree.png "PyTest Hooks")
 
-Some hooks are wrap@pytest.hookimpl(hookwrapper=True) as they wrap other hooks.
+Some hooks are wrap @pytest.hookimpl(hookwrapper=True) as they wrap other hooks (see article at top)
 
 ![Examples](./images/03-hook-tree-with-wrappers.png "PyTest Hooks")
 
