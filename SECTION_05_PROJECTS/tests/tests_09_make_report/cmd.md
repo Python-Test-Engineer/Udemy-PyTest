@@ -1,4 +1,4 @@
-python -m pytest -vs --tb=no .\tests\tests_01_make_report\
+python -m pytest -v .\tests\tests_04_filter_tests\python -m pytest -vs --tb=no .\tests\tests_01_make_report\
 
 python -m pytest -vs .\tests\tests_09_make_report\test_functions.py::test_fn_example6_xfail_passes --tb=no
 
