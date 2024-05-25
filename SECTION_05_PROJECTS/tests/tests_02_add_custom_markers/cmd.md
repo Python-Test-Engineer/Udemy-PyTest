@@ -1,1 +1,1 @@
-python -m pytest tests
+python -m pytest .\tests\tests_02_add_custom_markers\
