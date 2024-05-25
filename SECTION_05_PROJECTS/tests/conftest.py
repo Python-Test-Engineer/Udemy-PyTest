@@ -2,7 +2,7 @@ import pytest
 from datetime import datetime
 from pyboxen import boxen
 
-# interesing note - the main source code to see how PyTest works is in the dunder folders...
+# interesting note - the main source code to see how PyTest works is in the dunder folders...
 from _pytest.nodes import Item
 from _pytest.runner import CallInfo
 

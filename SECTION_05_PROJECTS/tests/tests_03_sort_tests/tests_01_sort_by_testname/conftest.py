@@ -23,6 +23,9 @@ def pytest_collection_modifyitems(items, config):
 
     # We print out DESC or ASC depending on the flag passed in the command line for illustration.
 
+    # item.nodeid - this is test_2 in the example below
+    # tests/tests_03_sort_tests/tests_01_sort_by_testname/test_sort_num.py::test_2
+
     if config.option.desc:
         items.sort(key=lambda item: item.nodeid.split("::")[-1], reverse=True)
         print(f"\n\n===> DESC:")

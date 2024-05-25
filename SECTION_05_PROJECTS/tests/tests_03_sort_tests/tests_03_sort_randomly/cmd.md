@@ -1,0 +1,1 @@
+python -m pytest -vs .\tests\tests_03_sort_tests\tests_03_sort_randomly\

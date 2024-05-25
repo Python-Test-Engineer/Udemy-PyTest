@@ -1,0 +1,1 @@
+python -m pytest -vs .\tests\tests_03_sort_tests\tests_02_sort_first_last\
