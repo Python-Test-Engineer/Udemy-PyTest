@@ -120,3 +120,12 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
                 padding=1,
             )
         )
+
+    print(
+        boxen(
+            "Python is cool!",
+            padding=1,
+            margin=1,
+            color="cyan",
+        )
+    )

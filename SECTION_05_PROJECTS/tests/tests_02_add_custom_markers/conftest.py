@@ -1,9 +1,4 @@
-"""
-In this example we have commented out pytest_runtest_makereport and use the root level configtest.py implementation of from django.conf import settings"
-"""
-
 import pytest
-
 
 from pyboxen import boxen
 
@@ -42,7 +37,7 @@ def pytest_collection_modifyitems(items):
                 title=f"keywords for {test.name}",
                 subtitle="keywords",
                 subtitle_alignment="left",
-                color="blue",
+                color="red",
                 padding=1,
             )
         )
