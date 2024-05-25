@@ -1,6 +1,6 @@
-# Filtering selection of tests
+# Filtering selection of tests - skipping tests...
 
-We can also filter tests based on custom criteria.
+We can also filter tests based on custom criteria. 
 
 We can use the nodeid to see if the test name has 'expensive' in it.
 
