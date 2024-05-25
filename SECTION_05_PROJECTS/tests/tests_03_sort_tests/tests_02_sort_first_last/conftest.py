@@ -17,9 +17,11 @@ def pytest_configure(config):
 
 # A pytest hook to for modifying collected items
 def pytest_collection_modifyitems(items, config):
+
     first_tests = []
     last_tests = []
     remaining_tests = []
+
     # get all the markers for a test
     for test in items:
         list_markers = [

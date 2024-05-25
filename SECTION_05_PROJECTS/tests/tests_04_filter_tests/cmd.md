@@ -1,1 +1,1 @@
-python -m pytest -v .\tests\tests_04_filter_tests\
+python -m pytest -vs .\tests\tests_04_filter_tests\
