@@ -4,6 +4,8 @@ Let's refresh markers, keywords and nodeid...
 
 If we run test with the --collect-only flag we get a list of all test that will be run:
 
+`python -m pytest -vs .\tests\tests_01_collect_tests --collect-only`
+
 ![--collect-only flag](./pytest-collect-only-flag.png "collect-only")
 pytest-collect-only-flag.png 
 

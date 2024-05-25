@@ -18,7 +18,7 @@ When we run the above we see that we get where I have used the pipe operator '|'
 
 KEYWORDS: test_something_else | inner | first| outer| pytestmark | test_collect_tests.py|tests_01_collect_tests| tests | SECTION_05_PROJECTS |
 
-items are: testname | makers| filename | folders->including root folder
+items are: testname | markers| filename | folders->including root folder
 
 MARKERS: inner - first - outer
 
