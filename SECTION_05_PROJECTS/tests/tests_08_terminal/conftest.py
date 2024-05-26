@@ -15,7 +15,7 @@ def pytest_configure(config):
 
 
 # report is report for a single test
-@pytest.hookimpl
+# @pytest.hookimpl
 def pytest_report_teststatus(report, config):
     # order seems to matter as the xpassed did not work when after passed
     # Handle xfailed and xpassed
@@ -71,11 +71,11 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
     content = os.linesep.join(
         f"{key}: {value}" for report in reports for key, value in report.user_properties
     )
-
+    # console.print(content)
     if content:
         # https://docs.pytest.org/en/7.1.x/reference/reference.html?highlight=record_property#std-fixture-record_property
         terminalreporter.ensure_newline()
-        terminalreporter.section("record_property", sep="-", red=True, bold=True)
+        terminalreporter.section("RECORD PROPERTY", sep="-", red=True, bold=True)
         terminalreporter.line(content)
         print("\n")
         terminalreporter.ensure_newline()
@@ -114,10 +114,11 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
         print(
             boxen(
                 output,
-                title="[blue]Test results:[/]",
-                subtitle="END OF DEMO",
-                subtitle_alignment="left",
+                title="[green]Test results:[/]",
+                title_alignment="center",
+                subtitle="END OF TEST RESULTS",
+                subtitle_alignment="center",
                 color="green",
-                padding=1,
+                padding=4,
             )
         )

@@ -43,7 +43,7 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
         try:
             # Access the test outcome (passed, failed, etc.)
 
-            # Access the test duration
+            # Access the test duration.
             test_duration = call.duration
             # Access the test ID (nodeid)
             # e.g tests/tests_01_make_report/test_class.py::TestApp::test_class_01_marked_last
@@ -69,6 +69,7 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
 
             # print(f"{item.name}|{test_id}|{outcome}|{test_duration}|{all_markers}")
             with open(FILENAME, "a") as f:
+                # we don't need to check for SKIPPED tests as they are not run!
                 if "xfail" in all_markers and outcome is None:
                     outcome = "X-PASSED"
                 elif "xfail" in all_markers and outcome is not None:

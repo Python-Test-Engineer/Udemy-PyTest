@@ -1,6 +1,7 @@
-python -m pytest -vs --tb=no .\tests\tests_01_make_report\
 
---tb=no does not displau trace back.
+python -m pytest -vs --tb=no .\tests\tests_09_make_report\
+
+--tb=no does not display trace back.
 
 https://docs.pytest.org/en/7.1.x/how-to/output.html
 
