@@ -10,7 +10,6 @@ print("\n\n")
 
 def pytest_configure(config):
 
-    config.input_file_content = "input_file_content no leading _"
     config.my_global_value = "Shared Value"
     # This is available via the request built in fixture so can be accessed in tests
     # global_value = request.config.my_global_value
@@ -24,7 +23,7 @@ def pytest_configure(config):
     with open(input_file_path, "r") as file:
         file_content = file.read()
 
-    config.some_input_file_content = file_content
+    config.input_file_content = file_content
     # we can then access this to load into a fixture in test_config_hook.py
 
     # we can see contents of config and note how it is printed before
