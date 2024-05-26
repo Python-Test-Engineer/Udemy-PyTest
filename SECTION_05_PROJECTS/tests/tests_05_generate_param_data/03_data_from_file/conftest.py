@@ -1,41 +1,29 @@
 import pytest
-import random
 from datetime import datetime
 from _pytest.nodes import Item
 from _pytest.runner import CallInfo
-from pyboxen import boxen
-
-from rich.console import Console
-
-console = Console()
 
 
-# https://rich.readthedocs.io/en/stable/appendix/colors.html
-
-# Let's define our failures.txt as a constant as we will need it later
+print("\n\n")
 
 
+# A pytest hook for adding an option
 def pytest_addoption(parser):
     parser.addoption(
-        "--file",
-        action="append",
-        default=[],
-        help="list of string inputs to pass to test functions",
+        "--input_file", action="store", default="", help="Choose an input file!"
     )
 
 
+# A pytest hook to dynamically parametrize tests
 def pytest_generate_tests(metafunc):
-
     # Check if the num fixture is used
-    if "file" in metafunc.fixturenames:
-        metafunc.parametrize("file", metafunc.config.getoption("file"))
-
+    if "initial_value" in metafunc.fixturenames:
         # Get the command line option
-        input_file = metafunc.config.getoption("--file")
-        print("input_file: ", input_file)
+        input_file = metafunc.config.getoption("--input_file")
+
         # Read the data from the input file (if specified)
         # We can load data from any external source that Python supports
-        # data = ["Apples", "Bananas", "Cherries"]
+        data = []
         if input_file:
             with open(input_file, "r") as f:
                 lines = f.readlines()
