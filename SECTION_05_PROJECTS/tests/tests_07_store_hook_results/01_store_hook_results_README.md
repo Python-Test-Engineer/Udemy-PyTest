@@ -12,5 +12,3 @@ def test_bar(record_property):
     record_property("spam", "eggs")
 
 ```
-PS
-I am using a report with more details now.

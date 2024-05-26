@@ -6,7 +6,7 @@ content02 = "our info we added in test_bar 📝 "
 
 def test_foo(record_property, request):
     # records a key-value pair
-    record_property("recorded in test_bar-> data01", content01)
+    record_property("recorded in test_foo-> data01", content01)
 
 
 def test_bar(record_property):
