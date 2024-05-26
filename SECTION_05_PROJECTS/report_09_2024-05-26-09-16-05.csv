@@ -1,8 +1,0 @@
-test_01_pass|PASSED|tests/tests_09_make_report/test_functions.py::test_01_pass|
-test_01_pass|PASSED|2.0008099999977276|
-test_02_xfail_fails|X-FAILED PASSED|tests/tests_09_make_report/test_functions.py::test_02_xfail_fails|xfail
-test_02_xfail_fails|X-FAILED PASSED|5.001029399922118|xfail
-test_03_fail|FAILED|tests/tests_09_make_report/test_functions.py::test_03_fail|
-test_03_fail|FAILED|5.000834800070152|
-test_05_xfail_passes|X-PASSED|tests/tests_09_make_report/test_functions.py::test_05_xfail_passes|xfail
-test_05_xfail_passes|X-PASSED|3.00079530000221|xfail

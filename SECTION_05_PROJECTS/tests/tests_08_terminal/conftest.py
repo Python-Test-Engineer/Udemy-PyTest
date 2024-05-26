@@ -50,6 +50,7 @@ def pytest_report_header(config):
                 padding=1,
             )
         )
+        # We can add another item the report header but it is useful to see that we get a return value that automatically gets added to the terminal report
         return [
             f"\n📝 This is in a pytest_report_header hook and it can access the config built in fixture: {config.my_global_value}"
         ]
@@ -120,12 +121,3 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
                 padding=1,
             )
         )
-
-    print(
-        boxen(
-            "Python is cool!",
-            padding=1,
-            margin=1,
-            color="cyan",
-        )
-    )
