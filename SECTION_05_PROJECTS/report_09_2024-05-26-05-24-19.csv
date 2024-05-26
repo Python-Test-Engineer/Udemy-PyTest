@@ -1,2 +1,0 @@
-test_valid_string[hello]|PASSED|tests/tests_05_generate_param_data/02_cli_options/test_strings.py::test_valid_string[hello]|
-test_valid_string[world]|PASSED|tests/tests_05_generate_param_data/02_cli_options/test_strings.py::test_valid_string[world]|
