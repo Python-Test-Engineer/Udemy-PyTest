@@ -1,0 +1,5 @@
+test_add[1-2-3]|PASSED|tests/tests_05_generate_param_data/01_generate_data/test_basic.py::test_add[1-2-3]|parametrize
+test_add[4-5-9]|PASSED|tests/tests_05_generate_param_data/01_generate_data/test_basic.py::test_add[4-5-9]|parametrize
+test_add[10-20-30]|PASSED|tests/tests_05_generate_param_data/01_generate_data/test_basic.py::test_add[10-20-30]|parametrize
+test_add[0-0-0]|PASSED|tests/tests_05_generate_param_data/01_generate_data/test_basic.py::test_add[0-0-0]|parametrize
+test_add[-1-1-0]|PASSED|tests/tests_05_generate_param_data/01_generate_data/test_basic.py::test_add[-1-1-0]|parametrize

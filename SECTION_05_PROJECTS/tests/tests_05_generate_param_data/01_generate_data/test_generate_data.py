@@ -11,4 +11,17 @@ def test_generate_data_tuple(data_tuple):
 
 
 def test_generate_data_two_lists_are_triples(list1, list2):
+    """
+    This function is a test case that checks if the product of `list1` multiplied by 3 is equal to `list2`. 
+
+    Parameters:
+        list1 (list): The first list to be multiplied.
+        list2 (list): The second list to be compared against the product of `list1`.
+
+    Returns:
+        None
+
+    Raises:
+        AssertionError: If the product of `list1` multiplied by 3 is not equal to `list2`.
+    """
     assert list1 * 3 == list2
