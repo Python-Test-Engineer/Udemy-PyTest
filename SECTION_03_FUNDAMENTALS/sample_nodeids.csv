@@ -1,0 +1,2 @@
+test_01|PASSED|tests/test_expensive.py::test_01|
+test_01|PASSED|tests/test_expensive.py::TestClass::test_01|
