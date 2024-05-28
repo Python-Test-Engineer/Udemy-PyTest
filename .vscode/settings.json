@@ -1,4 +1,10 @@
 {
+   "editor.quickSuggestions": {
+      "other": false,
+      "comments": false,
+      "strings": false
+   },
+   "editor.hover.enabled": false,
    "terminal.integrated.fontSize": 20,
    "python.terminal.activateEnvironment": true,
    "editor.renderLineHighlight": "all",
@@ -8,7 +14,10 @@
    "editor.tabCompletion": "on",
    "editor.wordWrap": "on",
    "workbench.tree.indent": 20,
-   "editor.wordWrapColumn": 120,
+   "editor.wordWrapColumn": 88,
+   "editor.rulers": [
+      89
+   ],
    "editor.fontSize": 22,
    "editor.fontWeight": 500,
    "editor.fontFamily": "Consolas",
@@ -17,9 +26,6 @@
    "editor.minimap.renderCharacters": false,
    "editor.minimap.showSlider": "always",
    "editor.multiCursorModifier": "ctrlCmd",
-   "editor.rulers": [
-      100
-   ],
    "workbench.startupEditor": "none",
    "html.format.templating": true,
    "workbench.iconTheme": "vscode-icons",
