@@ -14,7 +14,7 @@ I find it best to:
 - `python -m venv venv`
 - `.\venv\Scripts\activate` (Windows)
 - `source venv/bin/activate` (Mac/Linux)
-- `pip install requirements.txt`
+- `pip install -r requirements.txt`
 
 ## 03 Editor and extensions
 
