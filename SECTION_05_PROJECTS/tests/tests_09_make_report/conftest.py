@@ -70,6 +70,7 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
             # print(f"{item.name}|{test_id}|{outcome}|{test_duration}|{all_markers}")
             with open(FILENAME, "a") as f:
                 # we don't need to check for SKIPPED tests as they are not run!
+                # if outcome is None this means no assert was raised and the test passed.
                 if "xfail" in all_markers and outcome is None:
                     outcome = "X-PASSED"
                 elif "xfail" in all_markers and outcome is not None:

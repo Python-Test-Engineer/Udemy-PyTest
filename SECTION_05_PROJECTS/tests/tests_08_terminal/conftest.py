@@ -17,7 +17,7 @@ def pytest_configure(config):
 # report is report for a single test
 # @pytest.hookimpl
 def pytest_report_teststatus(report, config):
-    # order seems to matter as the xpassed did not work when after passed
+    # order seems to matter as the xpassed did not work when placed after passed
     # Handle xfailed and xpassed
     if hasattr(report, "wasxfail"):
         if report.skipped:
