@@ -1,8 +1,14 @@
 # Make a plugin called pytest-sort
 
-We will use the plugin/conftest file of 'sort_by_testname' as our plugin. It has a CLI flag of --desc to reverse the order.
+1. How do we make conftest.py distributable (and installable with pip install)?
+2. Test it does what is should.
+3. Test it for when user uses it.,
+
+We will use the plugin/conftest file of 'sort_by_testname' as our plugin. It has a CLI flags of --desc and --asc.
 
 Out plugin will have the name pytest-sort as PyPi etc prefers '-' to '_'.
+
+The conftest.py will be renamed to plugin_sort.py but we can have any name.
 
 As there are many moving parts to this project, we will do the following:
 
