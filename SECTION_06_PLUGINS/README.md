@@ -191,7 +191,11 @@ If you change the plugin_sort.py or any other plugin file, uninstall the plugin,
 
 To uninstall the plugin:
 
-`pip uninstall .\dist\pytest_sort-0.0.1-py3-none-any.whl` (change .whl name as per your project).
+`pip uninstall .\dist\pytest_sort-0.0.1-py3-none-any.whl` (change .whl name as per your project
+
+OR
+
+`pip uninstall pytest-sort` 
 
 upload issues:
 
