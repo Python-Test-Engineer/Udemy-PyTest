@@ -7,7 +7,7 @@ def examples(pytester):
 
 
 def test_sort(pytester, examples):
-    result = pytester.runpytest("-v")
+    result = pytester.runpytest("-v", "--asc")
 
     result.stdout.fnmatch_lines(
         [
