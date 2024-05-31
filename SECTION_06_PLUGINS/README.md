@@ -1,12 +1,12 @@
 # Make a plugin called pytest-sort
 
 1. How do we make conftest.py distributable (and installable with pip install)?
-2. Test it does what is should.
-3. Test it for when user uses it.,
+2. Test it does sorting.
+3. Test it for when user does `python -m pytests -vs --asc`.
 
-We will use the plugin/conftest file of 'sort_by_testname' as our plugin. It has a CLI flags of --desc and --asc.
+We will use the plugin/conftest.py code of 'sort_by_testname' as our plugin. It has a CLI flags of --desc and --asc.
 
-Out plugin will have the name pytest-sort as PyPi etc prefers '-' to '_'.
+Out plugin will have the name pytest-sort as PyPi etc prefers '-' to '_' but it can be any name.
 
 The conftest.py will be renamed to plugin_sort.py but we can have any name.
 
@@ -31,10 +31,6 @@ What do we need to do to create and maintain a distributable plugin project/repo
 
 So we now have a plugin project to maintain.
 
-There is a pytest-plugin cookie cutter to scaffold out the project but I found I had to make changes to it.
-
-As it is mostly boiler plate code, we will use the given template but we will also carry out an exercise where we change it to your specifications. We will look at what you need to change to do this.
-
 ## Building a .whl file.
 
 To make some code distributable, we need to build a .whl file.
@@ -53,7 +49,7 @@ Our plugin will be called pytest-sort, with a file called plugin_sort.py that ha
 
 PyPi can accept plugin names with a '_' but prefers a '-' so that is why we have both pytest-sort and pytest_sort.
 
-1. Copy conftest.py inot pytest_sort.py.
+1. Copy conftest.py into pytest_sort.py.
 
 To test src code before and after installation of our plugin we need to copy in our test we used previously. The plugin will still work regardless of testing as it is just the plugin_sort.py that does the work. However, it is good practice to have tests for mainatable plugins.
 
