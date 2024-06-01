@@ -1,15 +1,24 @@
 # Make a plugin called pytest-sort
 
-We will use the plugin/conftest file of 'sort_by_testname' as our plugin. It has a CLI flag of --desc to reverse the order.
+`pip install flit` - docs at https://flit.pypa.io/en/stable/
 
-Out plugin will have the name pytest-sort as PyPi etc prefers '-' to '_'.
+minimum files:
+- plugin.py
+- pyproject.toml - pyproject_minimal.toml has minimum needed. pyproject_base.toml has a fuller version.
 
-As there are many moving parts to this project, we will do the following:
+Once a .whl file is used, it can be used `pip (un)install thewheel.whl` and it can also be uninstalled with `pip uninstall plugin-name`.
 
-1. Have an overview demo of the whole process so that we have a general idea.
-2. Break the project into smaller chunks and work through them.
-3. Have a final summary overview of the process.
-4. Change the plugin name and code so that you can see how to make changes for your own plugin.
+
+1. How do we make conftest.py distributable (and installable with pip install)?
+2. Test it does sorting.
+3. Test it for when user does `python -m pytests -vs --asc`.
+
+We will use the plugin/conftest.py code of 'sort_by_testname' as our plugin. It has a CLI flags of --desc and --asc.
+
+Out plugin will have the name pytest-sort as PyPi etc prefers '-' to '_' but it can be any name.
+
+The conftest.py will be renamed to plugin_sort.py but we can have any name.
+ and code so that you can see how to make changes for your own plugin.
 
   *Most of this is boiler plate code that we don't have to understand - we just need to know what is expected of us for plugin distribution to take place.*
 
@@ -17,17 +26,13 @@ We will use `flit` which is a lighter weight package manager as we want to make 
 
 What do we need to do to create and maintain a distributable plugin project/repo?
 
-1. We need to convert the conftest.py into a distributable version rather than asking users to put this file in their code.
-2. We also need to manage our distributable plugin project.
-3. We need to test that the plugin does what we want it to do, (sort by test name).
-4. We also need to test that the plugin once installed by user sorts by test name and the --desc flag works. Once users have installed the plugin they will just use `python -m pytests` or `python -m pytest --desc`.
+1. MANDATORY: We need to convert the conftest.py into a distributable version rather than asking users to put this file in their code.
+2. OPTIONAL: We also need to manage our distributable plugin project.
+3. OPTIONAL: We need to test that the plugin does what we want it to do, (sort by test name).
+4. OPTIONAL: We also need to test that the plugin once installed by user sorts by test name and the --desc flag works. Once users have installed the plugin they will just use `python -m pytests` or `python -m pytest --desc or --asc`.
 
 
 So we now have a plugin project to maintain.
-
-There is a pytest-plugin cookie cutter to scaffold out the project but I found I had to make changes to it.
-
-As it is mostly boiler plate code, we will use the given template but we will also carry out an exercise where we change it to your specifications. We will look at what you need to change to do this.
 
 ## Building a .whl file.
 
@@ -43,11 +48,17 @@ Copy conftest.py local to pytest_sort.py as this is the plugin with rest of temp
 
 Remember, a plugin is just the hook code. `conftest.py` is a plugin but a local one. 
 
-Our plugin will be called pytest-sort, with a file called plugin_sort.py that has the code from the conftest.py file.
+Our plugin will be called pytest-sort, with a file called plugin_sort.py that has the code contents from the conftest.py file.
 
 PyPi can accept plugin names with a '_' but prefers a '-' so that is why we have both pytest-sort and pytest_sort.
 
-1. Copy conftest.py inot pytest_sort.py.
+1. Copy conftest.py into pytest_sort.py.
+2. Run `flit build --format wheel` or `flit build --format=wheel`.
+
+This will give a .whl like `pytest_sort-0.0.2-py2.py3-none-any.whl` which can then be installed with `pip install pytest_sort-0.0.2-py2.py3-none-any.whl`
+
+
+TESTING OUR PLUGIN:
 
 To test src code before and after installation of our plugin we need to copy in our test we used previously. The plugin will still work regardless of testing as it is just the plugin_sort.py that does the work. However, it is good practice to have tests for mainatable plugins.
 
@@ -64,15 +75,11 @@ src/test_sort.py::test_y PASSED
 src/test_sort.py::test_x PASSED
 src/test_sort.py::test_r PASSED
 ```
-2. We need to build a `.whl` file as this is distributable and is what is on PyPi when we use `pip install pytest-sort`.
-
-We use `flit build --format=wheel` to build a .whl file which we then need to install so that our plugin is active:
-
-`pip install .\dist\pytest_sort-0.0.1-py3-none-any.whl` (your file will most likely have a different name as the .whl file has system metadata in the file name so use the version you have).
 
 Once we install our plugin, we get test sorted alphabetically
 
-`python -m pytest -v`
+`python -m pytest -v --asc`
+
 
 ```
 src/test_sort.py::test_1 PASSED      
@@ -107,6 +114,7 @@ We need to test this funcionality and we do this with Pytester which is built to
 Thus we have a tests folder to test the plugin operation.
 
 1. Create a conftest.py file in tests and add
+
 ```
 pytest_plugins = ["pytester"]
 ```
@@ -128,27 +136,27 @@ It is the same as we saw in the project.
 
 We do this:
 ```
-result = pytester.runpytest("-v")
+result = pytester.runpytest("-v --asc")
 ```
 and we test that the output is ascending
 
 ```
-src/test_sort.py::test_a PASSED
-src/test_sort.py::test_r PASSED
-src/test_sort.py::test_s PASSED
-src/test_sort.py::test_x PASSED
-src/test_sort.py::test_y PASSED
-src/test_sort.py::test_zPASSED
+src/test_sort.py::test_1 PASSED
+src/test_sort.py::test_2 PASSED
+src/test_sort.py::test_3 PASSED
+src/test_sort.py::test_4 PASSED
+src/test_sort.py::test_5 PASSED
+src/test_sort.py::test_6 PASSED
 ```
 and with the --desc flag get the reverse:
 
 ```
-src/test_sort.py::test_z PASSED
-src/test_sort.py::test_y PASSED
-src/test_sort.py::test_x PASSED
-src/test_sort.py::test_s PASSED
-src/test_sort.py::test_r PASSED
-src/test_sort.py::test_a PASSED
+src/test_sort.py::test_6 PASSED
+src/test_sort.py::test_5 PASSED
+src/test_sort.py::test_4 PASSED
+src/test_sort.py::test_3 PASSED
+src/test_sort.py::test_2 PASSED
+src/test_sort.py::test_1 PASSED
 ```
 
 as well as 
@@ -180,25 +188,3 @@ fnmatch_lines is a way of seeing if the test ouput contains a line with certain 
 result.assert_outcomes(passed=6)
 ```
 tests if we do in fact have 6 passed tests.
-
-
-
-If these tests pass then we can feel assured that our plugin works satisfactorily as a plugin and we have also tested the functionality of the plugin code to sort test names alphabetically.
-
-If you change the plugin_sort.py or any other plugin file, uninstall the plugin, delete the dist folder and then rebuild and install.
-
-To uninstall the plugin:
-
-`pip uninstall .\dist\pytest_sort-0.0.1-py3-none-any.whl` (change .whl name as per your project).
-
-upload issues:
-
-- pip install keyring if using usb
-- CTRL+SHIFT+C/V for password on Windows
-- flit --repository testpypi publish
-- ensure git commit done
-
-https://github.com/pypa/flit/issues/122
-I'll leave this open for now because it could be better documented, and I'm considering whether we should support testpypi as a repository without the user needing to configure their .pypirc manually.
-
-https://pypi.org/project/pytest-python-test-engineer-sort/

@@ -17,7 +17,7 @@ def pytest_configure(config):
 # report is report for a single test
 # @pytest.hookimpl
 def pytest_report_teststatus(report, config):
-    # order seems to matter as the xpassed did not work when after passed
+    # order seems to matter as the xpassed did not work when placed after passed
     # Handle xfailed and xpassed
     # https://github.com/Teemu/pytest-sugar/blob/main/pytest_sugar.py#L221
     if hasattr(report, "wasxfail"):

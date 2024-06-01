@@ -6,7 +6,7 @@ python -m pytest -vs --tb=no .\tests\tests_09_make_report\
 https://docs.pytest.org/en/7.1.x/how-to/output.html
 
 - pytest --showlocals # show local variables in tracebacks
-pytest --tb=auto    # (default) 'long' tracebacks for the first and last
+- pytest --tb=auto    # (default) 'long' tracebacks for the first and last
 - pytest -l           # show local variables (shortcut)
                    # entry, but 'short' style for the other entries
 - pytest --tb=long    # exhaustive, informative traceback formatting
