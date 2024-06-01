@@ -1,4 +1,5 @@
 from datetime import datetime
+import pytest
 
 # timestamp our ouput files
 report_date = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
@@ -27,6 +28,8 @@ def pytest_collection_modifyitems(items):
         print("-------------------------------")
         with open(f"{FILENAME}", "a") as f:
             f.write(f"{test.name}|{all_keywords}\n")
+    # we don't want to run tests...
+    pytest.exit("Collect finished", returncode=0)
 
 
 print("\n\n")
