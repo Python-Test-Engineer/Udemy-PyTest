@@ -35,7 +35,7 @@ def pytest_report_teststatus(report, config):
         # does not work for error?
         return report.outcome, "T", ("PASSED ✅", {"blue": True, "bold": True})
     if report.when == "call" and report.failed:
-        return report.outcome, "E", ("ERROR ❌")
+        return report.outcome, "E", ("FAILED ❌")  # changed from recording
 
 
 def pytest_report_header(config):
@@ -68,7 +68,7 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
     # this holds record_property custom data
     # output = [report.user_properties for report in reports]
     # output2 = [report.sections for report in reports]
-
+    # content is truthy only if record properties have been set
     content = os.linesep.join(
         f"{key}: {value}" for report in reports for key, value in report.user_properties
     )
@@ -87,39 +87,40 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
             bold=True,
             fullwidth=None,
         )
+    # change from video - this runs regardless of content having a value
+    # content may be empty if no record properties have been set so we have moved this out of the `if content
+    print("\n")
+    passed_tests = len(terminalreporter.stats.get("passed", ""))
+    failed_tests = len(terminalreporter.stats.get("failed", ""))
+    skipped_tests = len(terminalreporter.stats.get("skipped", ""))
+    error_tests = len(terminalreporter.stats.get("error", ""))
+    xfailed_tests = len(terminalreporter.stats.get("xfailed", ""))
+    xpassed_tests = len(terminalreporter.stats.get("xpassed", ""))
 
-        print("\n")
-        passed_tests = len(terminalreporter.stats.get("passed", ""))
-        failed_tests = len(terminalreporter.stats.get("failed", ""))
-        skipped_tests = len(terminalreporter.stats.get("skipped", ""))
-        error_tests = len(terminalreporter.stats.get("error", ""))
-        xfailed_tests = len(terminalreporter.stats.get("xfailed", ""))
-        xpassed_tests = len(terminalreporter.stats.get("xpassed", ""))
+    total_tests = (
+        passed_tests
+        + failed_tests
+        + skipped_tests
+        + error_tests
+        + xfailed_tests
+        + xpassed_tests
+    )
 
-        total_tests = (
-            passed_tests
-            + failed_tests
-            + skipped_tests
-            + error_tests
-            + xfailed_tests
-            + xpassed_tests
+    output = f"Total tests: {total_tests}\n"
+    output += f"Passed: {passed_tests}\n"
+    output += f"Failed: {failed_tests}\n"
+    output += f"Skipped: {skipped_tests}\n"
+    output += f"Error: {error_tests}\n"
+    output += f"xfailed: {xfailed_tests}\n"
+    output += f"xpassed: {xpassed_tests}\n"
+    print(
+        boxen(
+            output,
+            title="[green]Test results:[/]",
+            title_alignment="center",
+            subtitle="END OF TEST RESULTS",
+            subtitle_alignment="center",
+            color="green",
+            padding=4,
         )
-
-        output = f"Total tests: {total_tests}\n"
-        output += f"Passed: {passed_tests}\n"
-        output += f"Failed: {failed_tests}\n"
-        output += f"Skipped: {skipped_tests}\n"
-        output += f"Error: {error_tests}\n"
-        output += f"xfailed: {xfailed_tests}\n"
-        output += f"xpassed: {xpassed_tests}\n"
-        print(
-            boxen(
-                output,
-                title="[green]Test results:[/]",
-                title_alignment="center",
-                subtitle="END OF TEST RESULTS",
-                subtitle_alignment="center",
-                color="green",
-                padding=4,
-            )
-        )
+    )
