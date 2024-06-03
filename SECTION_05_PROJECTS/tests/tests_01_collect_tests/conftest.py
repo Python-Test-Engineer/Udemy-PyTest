@@ -13,7 +13,7 @@ def pytest_collection_modifyitems(items):
     for test in items:
         # keyword order is:
         # test name - markers - module name - folder - parent folder/grandparent folder - root folder
-        # we have no markers in tests_01_collect_tests
+
         all_keywords = [str(x) for x in test.keywords]
         all_keywords = ("|").join(all_keywords)
 
