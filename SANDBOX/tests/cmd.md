@@ -1,4 +1,7 @@
 
+python -m pytest -vs .\tests\01_check_setup\test_03_logging.py
+
+
 python -m pytest -vs .\tests\02_sandbox\test_functions.py::test_fn_example1_pass
 python -m pytest -vs .\tests\02_sandbox\test_functions.py::test_fn_example1_pass --debug
 
