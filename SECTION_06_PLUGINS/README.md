@@ -11,7 +11,7 @@ Once a .whl file is used, it can be used `pip (un)install thewheel.whl` and it c
 
 1. How do we make conftest.py distributable (and installable with pip install)?
 2. Test it does sorting.
-3. Test it for when user does `python -m pytests -vs --asc`.
+3. Test it for when user does `python -m pytest -vs --asc`.
 
 We will use the plugin/conftest.py code of 'sort_by_testname' as our plugin. It has a CLI flags of --desc and --asc.
 
@@ -109,6 +109,8 @@ We can confirm our plugin works in terms of sorting with and without the --desc 
 
 Our end user will install our plugin and then run their tests, getting tests sorted alphabetically in either asc or desc order depending on whether the --desc flag is supplied.
 
+# Testing with Pyteser
+
 We need to test this funcionality and we do this with Pytester which is built to test plugins. It comes with PyTest.
 
 Thus we have a tests folder to test the plugin operation.
@@ -118,17 +120,25 @@ Thus we have a tests folder to test the plugin operation.
 ```
 pytest_plugins = ["pytester"]
 ```
-so that we can use Pytester. We are testing the plugin as a unit now rather than its purpose of sorting by testname.
+so that we can use Pytester as it is disabled by default. We are testing the plugin as a unit now rather than its purpose of sorting by testname.
 
 We now can run tests to very plugin useage by our user.
 
 We need to test what happens if once installed we run our tests with no flag and with the flag.
 
-`test_plugin.py` has two tests:
+`test_plugin.py` has two three:
 
-One to run tests and we add the `-v` flag so we can see test ouput.
+One to run tests and we add the `-v --asc` flag so we can see test ouput.
 
 Another to test with the flag `-v --desc `. We pass them in as separate arguments - see file.
+
+Another test_sort_asc_outcomes using just `--asc` with less console ouput.
+
+To test the plugin with pytester, we run:
+
+`python -m pytest -vs .\tests\test_plugin.py`
+
+We can also run `python -m pytest -vs .\tests\test_plugin.py::test_sort_asc_outcomes` which will not have output but just asserts if two tests pass.
 
 We then run two individual tests from test_plugin.py to test the plugin itself not the src code. The end user will just run their test files with --desc or not. The plugin will then sort one way or the other.
 
