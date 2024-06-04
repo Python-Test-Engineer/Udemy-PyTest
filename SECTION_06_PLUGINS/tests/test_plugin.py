@@ -55,3 +55,9 @@ def test_sort_asc_outcomes(pytester, examples):
     result = pytester.runpytest("--asc")
 
     result.assert_outcomes(passed=6)
+
+
+def test_help(pytester):
+    result = pytester.runpytest("--help")
+    result.stdout.fnmatch_lines(["* --desc*  sort descending*"])
+    result.stdout.fnmatch_lines(["* --asc*  sort ascending*"])
