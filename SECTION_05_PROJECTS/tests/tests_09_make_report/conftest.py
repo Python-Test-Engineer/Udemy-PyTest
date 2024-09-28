@@ -14,7 +14,7 @@ from _pytest.runner import CallInfo
 
 # timesamp our output files
 report_date = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-FILENAME = f"./results/report_09_{report_date}.csv"
+FILENAME = f"report_09_{report_date}.csv"
 
 print("\n\n")
 
@@ -41,7 +41,7 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):
         outcome = call.excinfo
 
         try:
-            # Access the test outcome (passed, failed, etc.)
+            # Access /the test outcome (passed, failed, etc.)
 
             # Access the test duration.
             test_duration = call.duration

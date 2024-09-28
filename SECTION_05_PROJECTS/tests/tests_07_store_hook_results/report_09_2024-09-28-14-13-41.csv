@@ -1,0 +1,3 @@
+test_foo|PASSED|tests/tests_07_store_hook_results/test_record_property.py::test_foo|
+test_bar|PASSED|tests/tests_07_store_hook_results/test_record_property.py::test_bar|
+test_fn_stash|PASSED|tests/tests_07_store_hook_results/test_stash.py::test_fn_stash|

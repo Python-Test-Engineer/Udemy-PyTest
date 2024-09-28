@@ -1,0 +1,4 @@
+test_something_else|PASSED|tests/tests_02_add_custom_markers/test_simple_complex.py::test_something_else|
+test_interface_simple|PASSED|tests/tests_02_add_custom_markers/test_simple_complex.py::test_interface_simple|last-simple_marker
+test_interface_complex|PASSED|tests/tests_02_add_custom_markers/test_simple_complex.py::test_interface_complex|complex_marker
+test_event_simple|PASSED|tests/tests_02_add_custom_markers/test_simple_complex.py::test_event_simple|simple_marker

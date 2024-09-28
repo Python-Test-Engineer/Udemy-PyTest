@@ -31,7 +31,7 @@ def pytest_collection_modifyitems(items):
         all_keywords = [str(x) for x in test.keywords]
         all_keywords = (" - ").join(all_keywords)
 
-        # output = f"Test: {test.nodeid} \nKeywords: {all_keywords}"
+        output = f"Test: {test.nodeid} \nKeywords: {all_keywords}"
         # keyword order is
         # test name - markers - module name - folder - parent folder/grandparent folder - root folder
         print(
